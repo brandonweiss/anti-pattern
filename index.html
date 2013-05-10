@@ -1,13 +1,28 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title:  Anti-pattern
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<section id="articles">
+  {% for post in site.posts | limit: 5 %}
+    <article class="post">
+      <header class="clearfix">
+        <h1>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h1>
+
+        <span class="date">
+          {{ post.date | date: "%B %d, %Y") }}
+        </span>
+      </header>
+
+      <section class="content">
+        {{ post.content }}
+      </section>
+    </article>
+  {% endfor %}
+</section>
+
+<footer>
+  <p>For older posts check out the <a href="{{ site.archive_path }}">archive</a>.</p>
+</footer>

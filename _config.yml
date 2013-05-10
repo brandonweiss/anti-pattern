@@ -1,3 +1,4 @@
-name: Your New Jekyll Site
-pygments: true
+name:      Anti-pattern
+pygments:  true
 permalink: /:title
+archive_path: /archive

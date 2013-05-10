@@ -1,46 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ page.title }}</title>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/stylesheets/normalize.css" />
+  <link rel="stylesheet" href="/stylesheets/master.css" />
+  <link rel="stylesheet" href="/stylesheets/molokai.css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata:400,700" />
 
-    </head>
-    <body>
+  <link rel="alternate" type="application/atom+xml", title="Anti-pattern", href="/feed">
+</head>
 
-        <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
-            </div>
-     
-                {{ content }}
+<body>
+  <header>
+    <p>This is <a href="/">{{ site.name }}</a>—thoughts on programming and whatnot by <a href="http://brandonweiss.me">Brandon Weiss</a>.</p>
+  </header>
 
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  Your Name<br />
-                  What You Are<br />
-                  your@email.com
-                </p>
-              </div>
-              <div class="contact">
-                <p>
-                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
-                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> <!-- /container -->
+  <section>
+    {{ content }}
+  </section>
 
-    </body>
+  <aside>
+    <p>My name is <a href="http://brandonweiss.me">Brandon Weiss</a>. I'm a product hacker currently living in San Francisco.</p>
+
+    <p>I co-founded <a href="http://sqoot.com">Sqoot</a> and <a href="http://myze.us">MyZeus</a>, and built <a href="http://expensieve.com">Expensieve</a> and <a href="http://arrival.io">Arrival</a>.</p>
+
+    <p>You should <a href="https://twitter.com/brandon_weiss" class="twitter-follow-button" data-show-count="false">Follow @brandon_weiss</a> on Twitter. You can also hit me up at <br /> <a href="mailto:brandon@anti-pattern.com">brandon@anti-pattern.com</a>. And if you want to know when I post, don't forget to subscribe to the <a href="/feed">feed</a>.</p>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </aside>
+
+  {% if site.safe == true %}
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4d63cbe7a219863d81000003');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  {% endif %}
+</body>
 </html>

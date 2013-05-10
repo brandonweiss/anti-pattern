@@ -1,4 +1,6 @@
-name:      Anti-pattern
-pygments:  true
-permalink: /:title
+name:         Anti-pattern
+markdown:     kramdown
+pygments:     true
+permalink:    /:title
 archive_path: /archive
+exclude:      ["vendor"]

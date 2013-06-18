@@ -4,3 +4,4 @@ pygments:     true
 permalink:    /:title
 archive_path: /archive
 exclude:      ["vendor"]
+baseurl:      http://anti-pattern.com

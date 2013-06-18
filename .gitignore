@@ -1,4 +1,4 @@
 .bundle
-_site
+_site/*
 tmp/*
 vendor/ruby

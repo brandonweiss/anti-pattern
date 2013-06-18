@@ -5,14 +5,14 @@ layout: nil
 <?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://anti-pattern.com/</loc>
+    <loc>{{site.baseurl}}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>http://anti-pattern.com/archive</loc>
+    <loc>{{site.baseurl}}archive</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -20,7 +20,7 @@ layout: nil
 
   {% for post in site.posts %}
     <url>
-      <loc>http://anti-pattern.com{{ post.url }}</loc>
+      <loc>{{site.baseurl}}{{ post.url }}</loc>
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>

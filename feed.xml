@@ -5,10 +5,10 @@ layout: nil
 <?xml version="1.0" encoding="UTF-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text" xml:lang="en">{{ site.name }}</title>
-  <link type="application/atom+xml" href="http://anti-pattern.com/feed" rel="self" />
-  <link type="text" href="http://anti-pattern.com" rel="alternate" />
+  <link type="application/atom+xml" href="{{site.baseurl}}/feed" rel="self" />
+  <link type="text" href="{{site.baseurl}}" rel="alternate" />
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>http://anti-pattern.com</id>
+  <id>{{site.baseurl}}</id>
   <author>
     <name>Brandon Weiss</name>
     <email>brandon@anti-pattern.com</email>
@@ -17,9 +17,9 @@ layout: nil
   {% for post in site.posts %}
     <entry>
       <title>{{ post.title }}</title>
-      <link href="http://anti-pattern.com{{ post.url }}" />
+      <link href="{{site.baseurl}}{{ post.url }}" />
       <updated>{{ post.date | date_to_xmlschema }}</updated>
-      <id>http://anti-pattern.com{{ post.url }}</id>
+      <id>{{site.baseurl}}{{ post.url }}</id>
       <content type="html">{{ post.content | xml_escape }}</content>
     </entry>
   {% endfor %}

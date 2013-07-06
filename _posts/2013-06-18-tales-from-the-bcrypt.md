@@ -5,6 +5,15 @@ permalink: tales-from-the-bcrypt
 date: 2013-06-18
 ---
 
+**Update**: Of course, not even three weeks after writing this `bcrypt-ruby` was finally updated to support externally setting the cost.
+
+{% highlight ruby %}
+# test/test_helper.rb
+BCrypt::Engine.cost = BCrypt::Engine::MIN_COST
+{% endhighlight %}
+
+---
+
 BCrypt is the gold standard for password hashing. It's different from the algorithms that came before it in that it's designed to be _slow_. Slow is not generally considered to be a feature of good algorithms, but as computing power increases, brute-forcing a hashing algorithm takes less time, so making the algorithm slower makes the hashes it generates more secure. A slower algorithm will impact normal application usage very little—like users signing up or signing in—but exponentially increases the time it takes a password to be brute-forced. BCrypt is the easiest and most secure way to hash password.
 
 One often-overlooked side-effect of using BCrypt is that because of how it works it makes your test suite slow. Your test suite probably creates a lot of users, authenticates with your app, and exercises the parts of your code using BCrypt a fair amount. All those extra milliseconds add up.

@@ -39,9 +39,9 @@ GEM
     shotgun (0.9)
       rack (>= 1.0)
     syntax (1.0.0)
-    thin (1.5.1)
+    thin (1.6.1)
       daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
+      eventmachine (>= 1.0.0)
       rack (>= 1.0.0)
     yajl-ruby (1.1.0)
 

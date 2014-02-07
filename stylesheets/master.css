@@ -1,8 +1,8 @@
 body {
-  font-family: Helvetica, sans-serif;
-  font-size:   20px;
-  line-height: 1.6;
-  background-color: #fdfdfd;
+  font-family:      Helvetica, sans-serif;
+  font-size:        20px;
+  line-height:      1.6;
+  background-color: hsl(0, 0%, 99%);
 }
 
 a {
@@ -99,22 +99,24 @@ footer {
 footer p { margin: 0px; }
 
 p code {
-  padding:          2px 5px;
-  background-color: #EEEEEE;
-  border:           1px solid #CCCCCC;
-  border-radius:    4px;
+  padding:          0px 5px;
+  border:           1px solid #dddddd;
+  background-color: #f8f8f8;
+  border-radius:    3px;
 }
 
 a code { color: #000000; }
 
 .highlight {
-  margin-bottom: 20px;
-  padding:       10px;
-  border:        1px solid #444444;
-  min-width:     658px;
-  display:       inline-block;
-  font-size:     18px;
-  overflow:      hidden;
+  margin-bottom:    20px;
+  padding:          10px;
+  border:           1px solid #dddddd;
+  border-radius:    3px;
+  background-color: #f8f8f8;
+  min-width:        658px;
+  display:          inline-block;
+  font-size:        18px;
+  overflow:         hidden;
 }
 
 /*

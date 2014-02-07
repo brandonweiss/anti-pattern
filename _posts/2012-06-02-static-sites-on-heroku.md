@@ -11,7 +11,7 @@ My first thought was to use [Sinatra](http://sinatrarb.com), an awesome, lightwe
 
 At its simplest, a Rack app is just an object that responds to a `call` method, and returns an Array of three things. A status code, a Hash of HTTP headers, and an Array of Strings that make up the body. The Rack app that runs my [personal site](http://brandonweiss.me) looks like this:
 
-{% highlight ruby %}
+```ruby
 # Gemfile
 source "http://rubygems.org"
 
@@ -35,6 +35,6 @@ map "/" do
     [200, headers, [body]]
   }
 end
-{% endhighlight %}
+```
 
 I put my images, stylesheets, and javascripts in the assets folder, toss an `index.html` file in the root and that's it.

@@ -1,7 +1,10 @@
 name:         Anti-pattern
-markdown:     kramdown
-pygments:     true
+markdown:     redcarpet
+highlighter:  rouge
 permalink:    /:title
 archive_path: /archive
 exclude:      ["vendor"]
 baseurl:      http://anti-pattern.com
+
+redcarpet:
+  extensions: ["footnotes", "smart", "hard_wrap"]

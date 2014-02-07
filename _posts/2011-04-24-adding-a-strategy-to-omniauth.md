@@ -13,7 +13,7 @@ OmniAuth supports multiple different authentication schemes, but [Rdio][rdio] th
 
 I started by copying the module/class structure from another strategy into a new file and renaming the class where appropriate.
 
-{% highlight ruby %}
+```ruby
 # oa-oauth/lib/omniauth/strategies/rdio.rb
 require 'omniauth/oauth'
 require 'multi_json'
@@ -30,11 +30,11 @@ module OmniAuth
     end
   end
 end
-{% endhighlight %}
+```
 
 Then I started looking for other similarities among the various strategies. There's a fair bit of variance in which methods are implemented and the naming of variables, but the first method that all strategies had in common was `initialize`.
 
-{% highlight ruby %}
+```ruby
 # oa-oauth/lib/omniauth/strategies/rdio.rb
 def initialize(app, consumer_key = nil, consumer_secret = nil, options = {}, &block)
   opts = {
@@ -45,13 +45,13 @@ def initialize(app, consumer_key = nil, consumer_secret = nil, options = {}, &bl
   }
   super(app, :rdio, consumer_key, consumer_secret, opts, options, &block)
 end
-{% endhighlight %}
+```
 
 I was lucky and the paths were very clearly listed in the API docs. All I did here was switch out the paths and change the second argument passed to `super` to `:rdio`.
 
 The next common method was `auth_hash`. The [auth_hash][auth_hash] is the data that is returned after you successfully authenticate with a service. It has info like the provider, the provider-specific id, name, username, etc.
 
-{% highlight ruby %}
+```ruby
 # oa-oauth/lib/omniauth/strategies/rdio.rb
 def auth_hash
   OmniAuth::Utils.deep_merge(super, {
@@ -77,7 +77,7 @@ def user_hash
     :extras => 'username'
   }).body)['result']
 end
-{% endhighlight %}
+```
 
 This part required a bit of trial and error, because although the docs indicate what fields are required, they don't say which are returned automatically and which have to be retrieved from the provider's API. Eventually I figured out that `provider` and `credentials` are automatically set, everything else has to be retrieved from the API. Look in the API docs for the specific request that will return information about the current user. Hopefully the docs are good and/or they have an API explorer so you can play around with it and see exactly what data is returned and in what format it's in.
 
@@ -87,7 +87,7 @@ There are several other methods that some strategies implement, but after more t
 
 Now make sure your new strategy is loaded.
 
-{% highlight ruby %}
+```ruby
 # oa-oauth/lib/omniauth/oauth.rb
 require 'omniauth/core'
 
@@ -98,32 +98,32 @@ module OmniAuth
     autoload :Rdio, 'omniauth/strategies/rdio'
   end
 end
-{% endhighlight %}
+```
 
 Create a test for it.
 
-{% highlight ruby %}
+```ruby
 # oa-oauth/spec/omniauth/strategies/rdio_spec.rb
 require File.expand_path('../../../spec_helper', __FILE__)
 
 describe OmniAuth::Strategies::Rdio do
   it_should_behave_like "an oauth strategy"
 end
-{% endhighlight %}
+```
 
 Update the readme.
 
-{% highlight text %}
+```text
 # README.markdown
 * Rdio (via [brandonweiss](http://github.com/brandonweiss))
-{% endhighlight %}
+```
 
 And you're done. Now you'll probably want to try it out to make sure it works. The easiest way is to just open up the project that's going to use the new strategy and edit the `Gemfile` to look for `omniauth` locally.
 
-{% highlight ruby %}
+```ruby
 # Gemfile
 gem 'omniauth', :path => '~/Code/omniauth'
-{% endhighlight %}
+```
 
 `bundle install` then start the server and you should be good to go. If you messed something up, fix it, then restart the server to pick up the changes.
 

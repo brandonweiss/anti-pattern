@@ -11,7 +11,7 @@ This most recently bit me again when upgrading from 9.1.x to 9.2.x because appar
 
 **NB**: The exact commands differ depending on which patch level of 9.1.x you're upgrading from and which patch level of 9.2.x you're upgrading to. So make sure to change the x's to the proper patch level in the commands.
 
-{% highlight bash %}
+```bash
 brew update
 brew upgrade postgresql
 launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
@@ -24,15 +24,15 @@ pg_upgrade \
   -D /usr/local/var/postgres
 cp /usr/local/Cellar/postgresql/9.2.x/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
 launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-{% endhighlight %}
+```
 
 This will upgrade to the latest version of postgres, stop the process, move your database to a new location, initialize a new database, port your data from the old database to the new database, create a new launch agent, and start the process.
 
 After you've confirmed that postgres has started, everything is working properly, and your old data has been properly converted you can remove the original database.
 
-{% highlight bash %}
+```bash
 rm -rf /usr/local/var/postgres91
-{% endhighlight %}
+```
 
 [homebrew]: http://mxcl.github.com/homebrew
 [semver]:   http://semver.org

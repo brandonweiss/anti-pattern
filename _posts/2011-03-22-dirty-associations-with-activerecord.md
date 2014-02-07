@@ -15,7 +15,7 @@ When you update fields on a model, those changes are tracked in a hash. And when
 
 So if you want to update the timestamp of an object when the associations change as well, here's how you do it:
 
-{% highlight ruby %}
+```ruby
 # app/models/dirty_associations.rb
 module DirtyAssociations
   attr_accessor :dirty
@@ -37,7 +37,7 @@ class Lolrus
                           :after_add    => :make_dirty,
                           :after_remove => :make_dirty
 end
-{% endhighlight %}
+```
 
 This works because callbacks can be defined on ActiveRecord associations. When an object is added or removed from the collection, the `make_dirty` callback will be triggered and a virtual attribute representing whether or not the object is dirty will get set to `true`. Then when `changed?` is called to check whether an object is dirty, it will check the virtual attribute first before deferring to `super`.
 

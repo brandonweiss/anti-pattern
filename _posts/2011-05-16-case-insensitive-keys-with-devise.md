@@ -11,12 +11,12 @@ Unfortunately, if you google the problem, the most common solution given is to `
 
 Devise should really have a way to do this automatically, and it does as of a few months ago in version `1.2` and later, although the way their wiki is set up makes it difficult to find. Here it is in all its one-line glory.
 
-{% highlight ruby %}
+```ruby
 # config/initializers/devise.rb
 Devise.setup do |config|
   config.case_insensitive_keys = [:email, :username]
 end
-{% endhighlight %}
+```
 
 Maybe this will push the old/incorrect answers out of the search results.
 

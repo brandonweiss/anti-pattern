@@ -9,11 +9,11 @@ If you use MongoMapper or Mongoid (or anything other than ActiveRecord) and rece
 
 Just add `require 'sprockets/railtie'` to your `config/application.rb` file and you should be golden. Like this:
 
-{% highlight ruby %}
+```ruby
 # config/application.rb
 # require 'rails/all'
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'active_resource/railtie'
 require 'sprockets/railtie'
-{% endhighlight %}
+```

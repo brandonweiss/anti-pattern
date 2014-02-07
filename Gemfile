@@ -1,8 +1,9 @@
 source "http://rubygems.org"
 ruby   "2.0.0"
 
-gem "jekyll",       "~> 1.4.3"
-gem "kramdown",     "~> 1.3.1"
+gem "jekyll",       "~> 1.4.3", github: "jekyll/jekyll"
+gem "redcarpet",    "~> 3.0.0", github: "vmg/redcarpet"
+gem "rouge",        "~> 1.3.2"
 gem "rack-jekyll",  "~> 0.4.1"
 gem "rack-rewrite", "~> 1.5.0"
 

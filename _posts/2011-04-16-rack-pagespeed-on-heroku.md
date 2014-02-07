@@ -13,13 +13,13 @@ The solution is to use a persistent cache like `memcached`. Depending on the siz
 
 First install `memcached` locally using [Homebrew][homebrew][^1]:
 
-{% highlight bash %}
+```bash
 $ brew install memcached
-{% endhighlight %}
+```
 
 Then just specify the store as `memcached`. Heroku can sometimes be finicky about relative paths, so I like to be really explicit and set the root of the app to the current directory, then build off that. `settings` is just a class method on the rack app, so you can access it from outside the app[^2]:
 
-{% highlight ruby %}
+```ruby
 # minimalog.rb
 class Minimalog < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -32,7 +32,7 @@ use Rack::PageSpeed, :public => "#{Minimalog.settings.root}/public" do
   store :memcached
   combine_css
 end
-{% endhighlight %}
+```
 
 Redeploy to Heroku and everything should be good.
 

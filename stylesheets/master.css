@@ -72,13 +72,14 @@ body > aside {
 
 .post .footnotes { font-size: 15px; }
 
-.post .footnotes:before {
-  width:       100px;
-  margin-top:  10px;
-  padding-top: 20px;
-  content:     '';
-  border-top:  1px solid #cccccc;
-  display:     block;
+.post .footnotes hr {
+  width:            100px;
+  height:           1px;
+  margin-top:       30px;
+  margin-bottom:    30px;
+  margin-left:      0px;
+  border:           0px;
+  background-color: #cccccc;
 }
 
 .date {

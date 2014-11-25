@@ -17,23 +17,29 @@ So without further ado, the questions[^1]:
 
 ---
 
-Who are your heroes?
-: Everyone has someone they look up to in their field. Leaders, luminaries, people who are pushing their craft forward. If you can't name at least five people and be able to talk at length about what you're learning from them then that tells me that you're not really _in_ your field. It would be like an electrical engineer in the 19th century not knowing who [Nikola Tesla][tesla] was.
+### Who are your heroes?
 
-Who do you follow? What do you read?
-: This is somewhat related to the last question, but it's not enough to just know of some famous people in your field. You need to be constantly reading and learning from them, but also others, too. If you tell me you read the top five blogs in your field, that's great, but that tells me you only know exactly _what_ everyone else knows, _when_ everyone else knows it. Someone who is really entrenched in their field will have spent the time to find good, obscure sources that most people don't know about.
+Everyone has someone they look up to in their field. Leaders, luminaries, people who are pushing their craft forward. If you can't name at least five people and be able to talk at length about what you're learning from them then that tells me that you're not really _in_ your field. It would be like an electrical engineer in the 19th century not knowing who [Nikola Tesla][tesla] was.
 
-Who have you collaborated with?
-: This demonstrates three things. One, that you're part of the community and know your peers. Two, that you're skilled enough for your peers to recognize it and want to work with you. And three, that you're passionate enough about your field to want to do it outside of work.
+### Who do you follow? What do you read?
 
-What are you working on personally?
-: This is commonly a taboo topic. It's considered a big faux pas to speak of plans beyond a company, lest you be perceived as disinterested or uncommitted. But a good employer will want employees that have dreams and aspirations beyond working for them. Logically you would think a company would want to hire people that will stay forever, but usually the qualities these people possess are the exact opposite of what a good employer should want. People who have the drive to be something more than just another employee _will_ inevitably leave, but during their stay they will probably do better work and be better for the company than your average lifer. Having one or more side projects underway is a good sign you're that type of person.
+This is somewhat related to the last question, but it's not enough to just know of some famous people in your field. You need to be constantly reading and learning from them, but also others, too. If you tell me you read the top five blogs in your field, that's great, but that tells me you only know exactly _what_ everyone else knows, _when_ everyone else knows it. Someone who is really entrenched in their field will have spent the time to find good, obscure sources that most people don't know about.
 
-What are you currently learning?
-: You should always, always, always be learning. Both in your field and outside of it. You should be perpetually overwhelmed with the amount of stuff you still have yet to learn. There should never be a time in which you've learned everything there is to learn about anything. If you've stopped learning things in your field and are content to keep doing the same things you've been doing, then you've already been left behind and just aren't aware of it yet.
+### Who have you collaborated with?
 
-What do you do outside of work?
-: This is basically a gimme; everyone does _something_ outside of work. But what they answer tells me how interesting the person is, whether or not I'd get along with them and most importantly whether or not they challenge themselves, as that's going to be a good indicator of if they're going to challenge themselves at work. So if you collect stamps or scrapbook that's cool, but I'm looking for someone who's learning to arc weld and trying to become a master surfer.
+This demonstrates three things. One, that you're part of the community and know your peers. Two, that you're skilled enough for your peers to recognize it and want to work with you. And three, that you're passionate enough about your field to want to do it outside of work.
+
+### What are you working on personally?
+
+This is commonly a taboo topic. It's considered a big faux pas to speak of plans beyond a company, lest you be perceived as disinterested or uncommitted. But a good employer will want employees that have dreams and aspirations beyond working for them. Logically you would think a company would want to hire people that will stay forever, but usually the qualities these people possess are the exact opposite of what a good employer should want. People who have the drive to be something more than just another employee _will_ inevitably leave, but during their stay they will probably do better work and be better for the company than your average lifer. Having one or more side projects underway is a good sign you're that type of person.
+
+### What are you currently learning?
+
+You should always, always, always be learning. Both in your field and outside of it. You should be perpetually overwhelmed with the amount of stuff you still have yet to learn. There should never be a time in which you've learned everything there is to learn about anything. If you've stopped learning things in your field and are content to keep doing the same things you've been doing, then you've already been left behind and just aren't aware of it yet.
+
+### What do you do outside of work?
+
+This is basically a gimme; everyone does _something_ outside of work. But what they answer tells me how interesting the person is, whether or not I'd get along with them and most importantly whether or not they challenge themselves, as that's going to be a good indicator of if they're going to challenge themselves at work. So if you collect stamps or scrapbook that's cool, but I'm looking for someone who's learning to arc weld and trying to become a master surfer.
 
 [^1]: I'm a web developer, so I came up with these questions with my field in mind, but none of them are really field-specific. They're all agnostic enough that they should apply to any job in any field that requires creative thought.
 

@@ -4,7 +4,8 @@ require "rubygems"
 require "bundler"
 Bundler.setup(:default, ENV["RACK_ENV"].to_sym)
 
-require "rack/jekyll"
+require "rack/contrib/try_static"
+require "rack/contrib/not_found"
 
 use Rack::Static, {
   root: "_site",
@@ -14,4 +15,10 @@ use Rack::Static, {
   }
 }
 
-run Rack::Jekyll.new
+use Rack::TryStatic, {
+  root: "_site",
+  urls: %w[/],
+  try:  ['index.html', '/index.html']
+}
+
+run Rack::NotFound.new("_site/404.html")

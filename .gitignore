@@ -1,4 +1,5 @@
 .bundle
+.sass-cache
 _site/*
 tmp/*
 vendor/ruby

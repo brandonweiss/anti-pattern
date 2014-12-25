@@ -3,6 +3,7 @@ ignore(/_site.+/)
 watch(/.+/) { `bundle exec jekyll build` }
 
 guard "livereload" do
+  watch(%r{_includes/.+\.html})
   watch(%r{_layouts/.+\.html})
   watch(%r{_posts/.+\.md})
   watch(%r{_sass/.+\.(css|scss)})

@@ -2,23 +2,8 @@
 layout: default
 ---
 
-<section id="articles">
-  <article class="post">
-    <header class="clearfix">
-      <h1>
-        <a href="{{ page.url }}">{{ page.title }}</a>
-      </h1>
-
-      <span class="date">
-        {{ page.date | date: "%B %d, %Y") }}
-      </span>
-    </header>
-
-    <section class="content">
-      {{ content }}
-    </section>
-  </article>
-</section>
+{% assign content=content %}
+{% include post.html post=page %}
 
 <footer>
   <p>For more posts check out the <a href="{{ site.archive_path }}">archive</a>.</p>

@@ -1,0 +1,15 @@
+<article class="post">
+  <header class="clearfix">
+    <h1>
+      <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+    </h1>
+
+    <span class="date">
+      {{ include.post.date | date: "%B %d, %Y") }}
+    </span>
+  </header>
+
+  <section class="content">
+    {{ content }}
+  </section>
+</article>

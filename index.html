@@ -3,12 +3,10 @@ layout: default
 title:  Anti-pattern
 ---
 
-<section id="articles">
-  {% for post in site.posts | limit: 5 %}
-    {% assign content=post.content %}
-    {% include post.html post=post %}
-  {% endfor %}
-</section>
+{% for post in site.posts | limit: 5 %}
+  {% assign content=post.content %}
+  {% include post.html post=post %}
+{% endfor %}
 
 <footer>
   <p>For older posts check out the <a href="{{ site.archive_path }}">archive</a>.</p>

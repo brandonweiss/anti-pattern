@@ -3,7 +3,7 @@ layout: default
 title:  Anti-pattern
 ---
 
-{% for post in site.posts | limit: 5 %}
+{% for post in site.posts | limit: 3 %}
   {% assign content=post.content %}
   {% include post.html post=post %}
 {% endfor %}

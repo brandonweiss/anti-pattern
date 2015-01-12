@@ -1,0 +1,42 @@
+@import "modular-scale";
+
+$ms-base:  1rem;
+$ms-ratio: $minor-third;
+
+body    { font-size: ms(0); line-height: 1.40; }
+h5, .h5 { font-size: ms(1); line-height: 1.40; }
+h4, .h4 { font-size: ms(2); line-height: 1.35; }
+h3, .h3 { font-size: ms(3); line-height: 1.30; }
+h2, .h2 { font-size: ms(4); line-height: 1.25; }
+h1, .h1 { font-size: ms(5); line-height: 1.20; }
+
+.center {
+  text-align: center;
+}
+
+.show-medium {
+  @media screen and (max-width: 475px) {
+    display: none;
+  }
+}
+
+.show-large {
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
+}
+
+.button {
+  padding:         0.5em 1em;
+  border:          1px solid;
+  border-radius:   2em;
+  text-decoration: none;
+  display:         inline-block;
+  color:           hsl(0, 0%, 50%);
+  border-color:    hsl(0, 0%, 60%);
+
+  &:hover {
+    color:        hsl(0, 0%, 10%);
+    border-color: hsl(0, 0%, 20%);
+  }
+}

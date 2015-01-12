@@ -1,16 +1,18 @@
 source "http://rubygems.org"
 ruby   "2.1.3"
 
-gem "jekyll",       "~> 2.5.3"
-gem "redcarpet",    "~> 3.2.2"
-gem "rouge",        "~> 1.7.7"
-gem "rack-contrib", "~> 1.2.0"
+gem "middleman",               "~> 3.3.7"
+gem "middleman-blog",          "~> 3.5.3"
+gem "middleman-syntax",        "~> 2.0.0"
+gem "redcarpet",               "~> 3.2.2"
+gem "redcarpet-abbreviations", "~> 0.0.1"
+gem "builder",                 "~> 3.2.2"
 
 group :development do
-  gem "shotgun",          "~> 0.9"
-  gem "guard",            "~> 2.10.5"
-  gem "guard-livereload", "~> 2.4.0"
-  gem "rack-livereload",  "~> 0.3.15"
+  gem "middleman-livereload", "~> 3.4.2"
 end
 
-gem "thin", group: :production
+group :production do
+  gem "rack-contrib", "~> 1.2.0"
+  gem "thin",         "~> 1.6.3"
+end

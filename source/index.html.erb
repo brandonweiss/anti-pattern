@@ -1,0 +1,11 @@
+---
+title: Anti-pattern
+---
+
+<% blog.articles.first(3).each do |post| %>
+  <%= partial "post", locals: { post: post } %>
+<% end %>
+
+<footer class="center">
+  <%= link_to "Read older posts in the archive", archive_path, class: "button" %>
+</footer>

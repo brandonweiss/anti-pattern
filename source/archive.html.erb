@@ -1,0 +1,11 @@
+---
+title: Archive
+---
+
+<ol class="archives" reversed>
+  <% blog.articles.each do |post| %>
+    <li>
+      <%= link_to post.title, post.url %>
+    </li>
+  <% end %>
+</ol>

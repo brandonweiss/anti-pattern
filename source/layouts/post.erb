@@ -1,0 +1,7 @@
+<% wrap_layout :layout do %>
+  <%= partial "post", locals: { post: current_article } %>
+
+  <footer class="center">
+    <%= link_to "Read more posts in the archive", archive_path, class: "button" %>
+  </footer>
+<% end %>

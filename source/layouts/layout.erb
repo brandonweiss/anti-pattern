@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+  <title><%= current_page.data.title %></title>
+
+  <%= stylesheet_link_tag "application" %>
+
+  <script src="//use.typekit.net/tdl6czk.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <link rel="alternate" type="application/atom+xml" title="Anti-pattern" href="/feed">
+</head>
+
+<body>
+  <header>
+    <p class="center">
+      This is <%= link_to "Anti-pattern", "/" %><span class="show-medium">—thoughts on programming <span class="show-large">and whatnot</span> by <a href="http://brandonweiss.me">Brandon Weiss</a></span>.
+    </p>
+  </header>
+
+  <section>
+    <%= yield %>
+  </section>
+
+  <footer>
+    <div class="avatar center">
+      <%= image_tag "avatar.png" %>
+    </div>
+
+    <p class="h3 center name">Brandon Weiss</p>
+
+    <p class="links center">
+      <%= link_to "@brandon_weiss", "https://twitter.com/brandon_weiss", class: "button" %>
+      <%= mail_to "brandon@anti-pattern.com", "brandon@anti-pattern.com", class: "button" %>
+      <%= link_to "Subscribe", feed_path, class: "button" %>
+    </p>
+  </footer>
+
+  <%= partial "tracking" %>
+</body>
+</html>

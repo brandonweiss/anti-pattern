@@ -2,10 +2,16 @@
 title: Archive
 ---
 
-<ol class="archives" reversed>
-  <% blog.articles.each do |post| %>
-    <li>
-      <%= link_to post.title, post.url %>
+<ul class="archives list-reset">
+  <% blog.articles.group_by { |post| post.date.year }.each do |year, posts| %>
+    <li class="archive-group">
+      <span class="group-name"><%= year %></span>
+
+      <ul class="list-reset group-contents">
+        <% posts.each do |post| %>
+          <li><%= link_to post.title, post.url %></li>
+        <% end %>
+      </ul>
     </li>
   <% end %>
-</ol>
+</ul>

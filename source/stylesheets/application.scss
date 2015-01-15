@@ -190,3 +190,29 @@ section > footer {
   margin: 0;
   width:  20%;
 }
+
+.archives {
+  @media screen and (min-width: 800px) {
+    .archive-group {
+      position: relative;
+    }
+
+    .group-name {
+      position: absolute;
+      left:     -3.5em;
+    }
+  }
+
+  .group-name {
+    color: hsl(0, 0%, 50%);
+  }
+
+  .archive-group > .group-contents {
+    margin: 1em 0;
+
+    li {
+      margin:      0.4em 0;
+      line-height: 1.25;
+    }
+  }
+}

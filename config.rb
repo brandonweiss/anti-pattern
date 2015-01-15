@@ -16,6 +16,7 @@ activate :blog do |blog|
   blog.default_extension = ".md"
 end
 
+activate :autoprefixer
 activate :syntax
 activate :directory_indexes
 

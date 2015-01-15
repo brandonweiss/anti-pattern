@@ -3,6 +3,14 @@
 @import "github";
 @import "utilities";
 
+@keyframes fade-in {
+  0%    { opacity: 0; }
+  25%   { opacity: 0; }
+  50%   { opacity: 0; }
+  75%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -28,8 +36,10 @@ html {
 }
 
 body {
-  background-color: hsl(0, 0%, 99%);
-  color:            hsl(0, 0%, 10%);
+  animation-name:     fade-in;
+  animation-duration: 0.75s;
+  background-color:   hsl(0, 0%, 99%);
+  color:              hsl(0, 0%, 10%);
 }
 
 body > header {

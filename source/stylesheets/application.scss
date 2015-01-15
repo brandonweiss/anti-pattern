@@ -155,6 +155,11 @@ section > footer {
     background-color: hsl(0, 0%, 97%);
   }
 
+  p code {
+    padding:          0.14em 0.28em;
+    background-color: hsl(0, 0%, 96%);
+  }
+
   pre,
   code {
     font-family: "inconsolata", monospace;

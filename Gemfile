@@ -2,7 +2,7 @@ source "http://rubygems.org"
 source "https://rails-assets.org"
 ruby   "2.1.3"
 
-gem "middleman",               "~> 3.3.7"
+gem "middleman",               "~> 3.3.9"
 gem "middleman-blog",          "~> 3.5.3"
 gem "middleman-syntax",        "~> 2.0.0"
 gem "middleman-autoprefixer",  "~> 2.4.3"

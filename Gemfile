@@ -11,7 +11,7 @@ gem "redcarpet-abbreviations", "~> 0.0.1"
 gem "builder",                 "~> 3.2.2"
 
 gem "rails-assets-normalize-css", "~> 3.0.2"
-gem "rails-assets-modular-scale", "~> 2.0.5"
+gem "rails-assets-modular-scale", "~> 2.0.6"
 
 group :development do
   gem "middleman-livereload", "~> 3.4.2"

@@ -111,7 +111,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails-assets-modular-scale (2.0.5)
+    rails-assets-modular-scale (2.0.6)
     rails-assets-normalize-css (3.0.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
@@ -157,7 +157,7 @@ DEPENDENCIES
   middleman-livereload (~> 3.4.2)
   middleman-syntax (~> 2.0.0)
   rack-contrib (~> 1.2.0)
-  rails-assets-modular-scale (~> 2.0.5)
+  rails-assets-modular-scale (~> 2.0.6)
   rails-assets-normalize-css (~> 3.0.2)
   redcarpet (~> 3.2.2)
   redcarpet-abbreviations (~> 0.0.1)

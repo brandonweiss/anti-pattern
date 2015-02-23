@@ -6,6 +6,8 @@ title: Anti-pattern
   <%= partial "post", locals: { post: post } %>
 <% end %>
 
+<%= partial "pagination", locals: { older_post: blog.articles[3], newer_post: nil } %>
+
 <footer class="center">
   <%= link_to "Read older posts in the archive", archive_path, class: "button" %>
 </footer>

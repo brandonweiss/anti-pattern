@@ -236,3 +236,70 @@ section > footer {
     }
   }
 }
+
+.pagination {
+  position:    fixed;
+  top:         50%;
+  transform:   translateY(-50%);
+  width:       4rem;
+  overflow:    hidden;
+  white-space: nowrap;
+  color:       inherit;
+  opacity:     0.1;
+
+  transition: width 0.20s ease,
+              opacity 0.25s ease;
+
+  @include responsive("display", "none",
+    (
+      750px: "block",
+    )
+  );
+
+  &:hover {
+    width:   13.6rem;
+    opacity: 1.0;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  &.newer {
+    left: 5px;
+
+    .title {
+      margin-left: -0.4rem;
+      text-align:  left;
+    }
+  }
+
+  &.older {
+    right:     5px;
+    direction: rtl;
+
+    .title {
+      margin-right: -0.4rem;
+      text-align:   right;
+    }
+  }
+
+  .icon {
+    width:          4.5rem;
+    vertical-align: middle;
+  }
+
+  .title {
+    width:          9rem;
+    display:        inline-block;
+    white-space:    normal;
+    vertical-align: middle;
+    margin-top:     0.4em;
+
+    @include responsive("display", "none",
+      (
+        1000px: "inline-block",
+      )
+    );
+  }
+}

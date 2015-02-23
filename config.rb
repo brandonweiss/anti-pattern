@@ -37,3 +37,13 @@ set :feed_path,    "/feed"
 
 page "/feed.xml",    layout: false
 page "/sitemap.xml", layout: false
+
+helpers do
+
+  def strip_whitespace_between_tags(&block)
+    capture do
+      yield.gsub(/>\s+</, "><")
+    end
+  end
+
+end

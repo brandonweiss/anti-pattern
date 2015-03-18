@@ -109,6 +109,7 @@ GEM
       rack (>= 0.9.1)
     rack-livereload (0.3.15)
       rack
+    rack-rewrite (1.5.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails-assets-modular-scale (2.0.6)

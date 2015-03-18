@@ -8,6 +8,7 @@ gem "middleman-autoprefixer",  "~> 2.4.3"
 gem "redcarpet",               "~> 3.2.2"
 gem "redcarpet-abbreviations", "~> 0.0.1"
 gem "builder",                 "~> 3.2.2"
+gem "rack-rewrite",            "~> 1.5.1"
 
 source "https://rails-assets.org" do
   gem "rails-assets-normalize-css", "~> 3.0.2"

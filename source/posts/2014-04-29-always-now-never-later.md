@@ -1,5 +1,5 @@
 ---
-title: The Culture That Creates the Problem Is Never the Culture That Fixes the Problem
+title: Always Now, Never Later
 ---
 
 In software, there is no such thing as "done." Done is a choice programmers make between quick but dirty and slow but clean. Done is just a balance held in tension by hundreds of choices made every day. Every decision a programmer makes incurs a cost called "technical debt." It is an apt analogy. The more you spend up front, the less you'll have to pay later. Whatever you don't pay now, you'll eventually have to pay back, plus interest.

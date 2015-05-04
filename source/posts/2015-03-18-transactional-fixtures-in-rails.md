@@ -18,7 +18,7 @@ Eventually I [found it][transactional fixtures commit], back in 2005. That’s t
 
 Database Cleaner’s [README][database cleaner readme] even says “One of my motivations for writing this library was to have an easy way to turn on what Rails calls "transactional_fixtures" in my non-rails ActiveRecord projects”. Epic facepalm.
 
-I think what happened is that I didn’t really start testing until a few years after I discovered Ruby and Rails. This would’ve roughly coincided with the Rails 2.3 era, when I experimented with using lighter-weight frameworks like Sinatra, as well as other databases and ORMs, like MongoDB and Sequel. I started using Database Cleaner because it was necessary. When I eventually came back to Rails year later, I just continued using Database Cleaner because I’d always used it, and I never bothered to read the fucking manual.
+I think what happened is that I didn’t really start testing until a few years after I discovered Ruby and Rails. This would’ve roughly coincided with the Rails 2.3 era, when I experimented with using lighter-weight frameworks like Sinatra, as well as other databases and ORMs, like MongoDB and Sequel. I started using Database Cleaner because it was necessary. When I eventually came back to Rails years later, I just continued using Database Cleaner because I’d always used it, and I never bothered to read the fucking manual.
 
 Nothing is more motivating than feeling like an idiot, so I submitted a [pull request][pull request] to Rails a week ago to give the feature a better, clearer name, and it was just recently merged! When Rails 5.0 ships the new name for "transactional fixtures" will be "transactional tests".
 

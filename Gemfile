@@ -11,7 +11,7 @@ gem "builder",                 "~> 3.2.2"
 gem "rack-rewrite",            "~> 1.5.1"
 
 source "https://rails-assets.org" do
-  gem "rails-assets-normalize-css", "~> 3.0.2"
+  gem "rails-assets-normalize-css", "~> 3.0.3"
   gem "rails-assets-modular-scale", "~> 2.0.6"
 end
 

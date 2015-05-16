@@ -8,8 +8,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.7)
-    autoprefixer-rails (5.1.5)
+    addressable (2.3.8)
+    autoprefixer-rails (5.1.11)
       execjs
       json
     builder (3.2.2)
@@ -32,7 +32,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    daemons (1.1.9)
+    daemons (1.2.2)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)

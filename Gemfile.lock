@@ -112,7 +112,7 @@ GEM
     rack-rewrite (1.5.1)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails-assets-modular-scale (2.0.6)
+    rails-assets-modular-scale (2.0.9)
     rails-assets-normalize-css (3.0.3)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
@@ -159,7 +159,7 @@ DEPENDENCIES
   middleman-syntax (~> 2.0.0)
   rack-contrib (~> 1.2.0)
   rack-rewrite (~> 1.5.1)
-  rails-assets-modular-scale (~> 2.0.6)!
+  rails-assets-modular-scale (~> 2.0.9)!
   rails-assets-normalize-css (~> 3.0.3)!
   redcarpet (~> 3.2.3)
   redcarpet-abbreviations (~> 0.1.0)

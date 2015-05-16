@@ -6,7 +6,7 @@ gem "middleman-blog",          "~> 3.5.3"
 gem "middleman-syntax",        "~> 2.0.0"
 gem "middleman-autoprefixer",  "~> 2.4.3"
 gem "redcarpet",               "~> 3.2.3"
-gem "redcarpet-abbreviations", "~> 0.0.1"
+gem "redcarpet-abbreviations", "~> 0.1.0"
 gem "builder",                 "~> 3.2.2"
 gem "rack-rewrite",            "~> 1.5.1"
 

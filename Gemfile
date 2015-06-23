@@ -12,7 +12,7 @@ gem "rack-rewrite",            "~> 1.5.1"
 
 source "https://rails-assets.org" do
   gem "rails-assets-normalize-css", "~> 3.0.3"
-  gem "rails-assets-modular-scale", "~> 2.0.9"
+  gem "rails-assets-modular-scale", "~> 2.1.1"
 end
 
 group :development do

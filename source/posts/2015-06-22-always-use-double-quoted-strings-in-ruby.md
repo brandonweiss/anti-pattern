@@ -18,7 +18,7 @@ I’m going to try and settle this once and for all.
 
 There are a number of style guides, but the two most popular ones are [Bozhidar Batsov’s][batsov guide] and [GitHub’s][github guide], which is based on Bozhidar’s.
 
-Bozhidar’s suggests two options. Using single quotes as a default and using double quotes when interpolating, or just using double quotes all the time. He notes that the latter style is a bit more popular in the Ruby community, although I have no idea if that is true or not.
+Bozhidar’s enumerates the two options—using single quotes as a default and double quotes when interpolating, or just using double quotes all the time—but only recommends being consistent in whichever you choose. In a [previous version][previous version] he notes that the latter style is a bit more popular in the Ruby community, although I have no idea if that is true or not.
 
 GitHub’s says to just use double quotes all the time.
 
@@ -48,6 +48,7 @@ Look at that, it turns out there’s a performance difference after all.
 
 [batsov guide]: https://github.com/bbatsov/ruby-style-guide#consistent-string-literals
 [github guide]: https://github.com/styleguide/ruby
+[previous version]: https://github.com/bbatsov/ruby-style-guide/commit/4ada068fe7dad872931b713d15720d603c9c209a
 [rubocop]: https://github.com/bbatsov/rubocop
 [rubocop default]: https://github.com/bbatsov/rubocop/blob/master/config/default.yml#L471
 [hound]: https://houndci.com

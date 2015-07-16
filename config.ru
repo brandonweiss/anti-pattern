@@ -6,6 +6,11 @@ require "rack/contrib/try_static"
 require "rack/contrib/not_found"
 
 use Rack::Rewrite do
+  r301 %r{\A\/\d{4}\/\d{1,2}\/\d{1,2}\/(.+)\z}, "/$1"
+  r301 %r{\A\/\d{4}\/\d{1,2}\/\d{1,2}\z},       "/archive"
+  r301 %r{\A\/\d{4}\/\d{1,2}\z},                "/archive"
+  r301 %r{\A\/\d{4}\z},                         "/archive"
+
   r301 "/the-culture-that-creates-the-problem-is-never-the-culture-that-fixes-the-problem", "/always-now-never-later"
 end
 

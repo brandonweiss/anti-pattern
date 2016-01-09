@@ -16,7 +16,7 @@ source "https://rails-assets.org" do
 end
 
 group :development do
-  gem "middleman-livereload", "~> 3.4.2"
+  gem "middleman-livereload", "~> 3.4.6"
 end
 
 group :production do

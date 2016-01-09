@@ -2,6 +2,18 @@
 title: Strip Leading Whitespace from Heredocs in Ruby
 ---
 
+**Update**: Starting in Ruby 2.3 this can be done natively with the squiggly heredoc. Using a tilde instead of a hyphen will strip the leading whitespace.
+
+```ruby
+<<~EOS
+  <pre>
+    <code>puts "foobar"</code>
+  </pre>
+EOS
+```
+
+---
+
 A "heredoc" in programming is short for "here document". If you're not familiar with the concept I encourage you to [read up on it][heredoc]. It's basically a way to declare a file or long string inline. Formatting is preserved and quotes are ignored, which means strings with quotes in them don't have to be escaped.
 
 For example, if you needed a string with some spacing, indentation, and quotes you could do something like this:

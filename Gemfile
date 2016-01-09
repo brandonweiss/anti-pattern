@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-ruby   "2.2.2"
+ruby   "2.3.0"
 
 gem "middleman",               "~> 3.3.12"
 gem "middleman-blog",          "~> 3.5.3"

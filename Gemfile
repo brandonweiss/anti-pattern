@@ -21,5 +21,5 @@ end
 
 group :production do
   gem "rack-contrib", "~> 1.2.0"
-  gem "thin",         "~> 1.6.3"
+  gem "thin",         "~> 1.6.4"
 end

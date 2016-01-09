@@ -14,17 +14,3 @@ namespace :assets do
   end
 
 end
-
-namespace :docker do
-
-  desc "Build Docker image"
-  task :build do
-    sh "docker build -t brandonweiss/anti-pattern ."
-  end
-
-  desc "Push Docker image"
-  task :push do
-    sh "docker push brandonweiss/anti-pattern"
-  end
-
-end

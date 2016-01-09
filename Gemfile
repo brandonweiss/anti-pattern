@@ -20,6 +20,6 @@ group :development do
 end
 
 group :production do
-  gem "rack-contrib", "~> 1.2.0"
+  gem "rack-contrib", "~> 1.4.0"
   gem "thin",         "~> 1.6.4"
 end

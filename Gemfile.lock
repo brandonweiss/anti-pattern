@@ -40,6 +40,7 @@ GEM
     eventmachine (1.0.7)
     execjs (2.5.2)
     ffi (1.9.8)
+    git-version-bump (0.15.1)
     haml (4.0.6)
       tilt
     hike (1.2.3)
@@ -105,8 +106,9 @@ GEM
     padrino-support (0.12.5)
       activesupport (>= 3.1)
     rack (1.6.4)
-    rack-contrib (1.2.0)
-      rack (>= 0.9.1)
+    rack-contrib (1.4.0)
+      git-version-bump (~> 0.15)
+      rack (~> 1.4)
     rack-livereload (0.3.16)
       rack
     rack-rewrite (1.5.1)
@@ -157,7 +159,7 @@ DEPENDENCIES
   middleman-blog (~> 3.5.3)
   middleman-livereload (~> 3.4.6)
   middleman-syntax (~> 2.0.0)
-  rack-contrib (~> 1.2.0)
+  rack-contrib (~> 1.4.0)
   rack-rewrite (~> 1.5.1)
   rails-assets-modular-scale (~> 2.1.1)!
   rails-assets-normalize-css (~> 3.0.3)!

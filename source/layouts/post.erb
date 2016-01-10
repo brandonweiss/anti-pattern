@@ -4,6 +4,6 @@
   <%= partial "pagination", locals: { older_post: current_article.previous_article, newer_post: current_article.next_article } %>
 
   <footer class="center">
-    <%= link_to "Read more posts in the archive", archive_path, class: "button" %>
+    <%= link_to "Read more posts in the archive", config[:archive_path], class: "button" %>
   </footer>
 <% end %>

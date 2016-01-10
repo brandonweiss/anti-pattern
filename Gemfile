@@ -1,10 +1,11 @@
 source "http://rubygems.org"
 ruby   "2.3.0"
 
-gem "middleman",               "~> 3.3.12"
-gem "middleman-blog",          "~> 3.5.3"
+gem "middleman",               "~> 4.0.0"
+gem "middleman-blog",          "~> 4.0.0"
 gem "middleman-syntax",        "~> 2.1.0"
 gem "middleman-autoprefixer",  "~> 2.6.3"
+gem "middleman-sprockets",     "~> 4.0.0.rc"
 gem "redcarpet",               "~> 3.3.4"
 gem "redcarpet-abbreviations", "~> 0.1.1"
 gem "builder",                 "~> 3.2.2"

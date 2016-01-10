@@ -2,14 +2,14 @@ xml.instruct!
 
 xml.urlset xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9" do
   xml.url do
-    xml.loc url
+    xml.loc config[:hostname]
     xml.lastmod blog.articles.first.date.to_time.iso8601
     xml.changefreq "daily"
     xml.priority "1.0"
   end
 
   xml.url do
-    xml.loc URI.join(url, archive_path)
+    xml.loc URI.join(config[:hostname], config[:archive_path])
     xml.lastmod blog.articles.first.date.to_time.iso8601
     xml.changefreq "daily"
     xml.priority "0.7"
@@ -17,7 +17,7 @@ xml.urlset xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9" do
 
   blog.articles.each do |post|
     xml.url do
-      xml.loc URI.join(url, post.url)
+      xml.loc URI.join(config[:hostname], post.url)
       xml.lastmod post.date.to_time.iso8601
       xml.changefreq "daily"
       xml.priority "0.7"

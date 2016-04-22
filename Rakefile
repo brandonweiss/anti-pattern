@@ -11,6 +11,7 @@ namespace :assets do
   desc "Remove compiled files"
   task :clean do
     sh "rm -rf #{File.dirname(__FILE__)}/build/*"
+    sh "rm -rf #{File.dirname(__FILE__)}/tmp/dist"
   end
 
 end

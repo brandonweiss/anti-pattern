@@ -1,0 +1,21 @@
+{
+  "name": "anti-pattern",
+  "version": "0.0.0",
+  "description": "Asset pipeline",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonweiss/anti-pattern.com.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "~> 3.9.1",
+    "gulp-autoprefixer": "~> 3.1.0",
+    "gulp-concat": "~> 2.6.0",
+    "gulp-sass": "~> 2.3.1",
+    "gulp-watch": "~> 4.3.5"
+  },
+  "dependencies": {
+    "modularscale-sass": "~> 2.1.1",
+    "normalize.css": "~> 4.1.1"
+  }
+}

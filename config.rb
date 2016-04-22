@@ -19,13 +19,16 @@ activate :blog do |blog|
   blog.default_extension = ".md"
 end
 
-activate :autoprefixer
 activate :syntax
 activate :directory_indexes
 
+activate :external_pipeline, name: :gulp,
+ command: build? ? "gulp assets" : "gulp watch",
+ source: "./tmp/dist",
+ latency: 1
+
 config[:trailing_slash] = false
 
-config[:css_dir]    = "stylesheets"
 config[:images_dir] = "images"
 
 config[:markdown_engine] = :redcarpet

@@ -1,5 +1,3 @@
-//= require_self
-
 function ready(callback) {
   if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", callback)
@@ -26,7 +24,6 @@ function withinRangeOfBottom(rangeToBottom) {
 
   return viewportBottomScrollPosition >= pageHeight - rangeToBottom
 }
-
 
 ready(function() {
   if (document.querySelector(".pagination.newer")) {

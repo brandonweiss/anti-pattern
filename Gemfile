@@ -10,6 +10,7 @@ gem "redcarpet",               "~> 3.3.4"
 gem "redcarpet-abbreviations", "~> 0.1.1"
 gem "builder",                 "~> 3.2.2"
 gem "rack-rewrite",            "~> 1.5.1"
+gem "rake",                    "~> 11.1.2"
 
 source "https://rails-assets.org" do
   gem "rails-assets-normalize-css", "~> 3.0.3"

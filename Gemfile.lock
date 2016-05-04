@@ -126,6 +126,7 @@ GEM
       rack (>= 1.0)
     rails-assets-modular-scale (2.1.1)
     rails-assets-normalize-css (3.0.3)
+    rake (11.1.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -165,6 +166,7 @@ DEPENDENCIES
   rack-rewrite (~> 1.5.1)
   rails-assets-modular-scale (~> 2.1.1)!
   rails-assets-normalize-css (~> 3.0.3)!
+  rake (~> 11.1.2)
   redcarpet (~> 3.3.4)
   redcarpet-abbreviations (~> 0.1.1)
   thin (~> 1.6.4)

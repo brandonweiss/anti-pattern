@@ -4,7 +4,7 @@ title: Explicit Privates
 
 Years ago I [wrote][old post] about the different styles of `private` declarations in Ruby and my personal preference. It was the best I could see at the time, but it was only marginally better than the rest and totally non-standard. Now I think I’ve finally arrived at a style that is superior to all of them.
 
-To recap, the gold standard is this.
+To recap, the common style is this.
 
 ```ruby
 class Stuff
@@ -22,7 +22,7 @@ class Stuff
 end
 ```
 
-Despite being the common style, it’s actually awful. If your file is large, the only way to know if a method you’re looking at is private or not is to keep scrolling upwards until you either see a `private` or `class` declaration. All Rubyists have done this so many times now it’s become habitual. We’ve all internalized this as normal and we don’t ever think about how absurd it is. There’s a better way, though. If you’re a savvy Rubyist, you might be aware that the `private` declaration doesn’t affect class methods.
+Despite being ubiquitous, it’s actually awful. If your file is large, the only way to know if a method you’re looking at is private or not is to keep scrolling upwards until you either see a `private` or `class` declaration. All Rubyists have done this so many times now it’s become habitual. We’ve all internalized this as normal and we don’t ever think about how absurd it is. There’s a better way, though. If you’re a savvy Rubyist, you might be aware that the `private` declaration doesn’t affect class methods.
 
 ```ruby
 class Stuff

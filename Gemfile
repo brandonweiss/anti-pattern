@@ -3,7 +3,7 @@ ruby   "2.3.0"
 
 gem "middleman",               "~> 4.1.7"
 gem "middleman-blog",          "~> 4.0.1"
-gem "middleman-syntax",        "~> 2.1.0"
+gem "middleman-syntax",        "~> 3.0.0"
 gem "redcarpet",               "~> 3.3.4"
 gem "redcarpet-abbreviations", "~> 0.1.1"
 gem "builder",                 "~> 3.2.2"

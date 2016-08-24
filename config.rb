@@ -8,7 +8,7 @@ Middleman::Renderers::MiddlemanRedcarpetHTML.include Redcarpet::Render::HTMLAbbr
 require "lib/render_markdown_files_as_html"
 activate :render_markdown_files_as_html
 
-configure :development do
+configure :server do
   activate :livereload
 end
 

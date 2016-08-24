@@ -8,7 +8,7 @@ gem "redcarpet",               "~> 3.3.4"
 gem "redcarpet-abbreviations", "~> 0.1.1"
 gem "builder",                 "~> 3.2.2"
 gem "rack-rewrite",            "~> 1.5.1"
-gem "rake",                    "~> 11.1.2"
+gem "rake",                    "~> 11.2.2"
 
 group :development do
   gem "middleman-livereload", "~> 3.4.6"

@@ -8,11 +8,11 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "gulp": "~> 3.9.1",
-    "gulp-autoprefixer": "~> 3.1.0",
-    "gulp-concat": "~> 2.6.0",
-    "gulp-sass": "~> 2.3.1",
-    "gulp-watch": "~> 4.3.5"
+    "autoprefixer-brunch": "^1.8.5",
+    "brunch": "^2.9.1",
+    "javascript-brunch": "^2.0.0",
+    "postcss-brunch": "^2.0.1",
+    "sass-brunch": "^2.6.3"
   },
   "dependencies": {
     "modularscale-sass": "~> 2.1.1",

@@ -22,8 +22,8 @@ end
 activate :syntax
 activate :directory_indexes
 
-activate :external_pipeline, name: :gulp,
- command: build? ? "gulp assets" : "gulp watch",
+activate :external_pipeline, name: :brunch,
+ command: build? ? "brunch build" : "brunch watch",
  source: "./tmp/dist",
  latency: 1
 

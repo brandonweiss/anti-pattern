@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <p class="center">
       This is <%= link_to "Anti-pattern", "/" %><span class="show-small">—thoughts on programming
       <span class="show-medium">and whatnot</span>
@@ -25,11 +25,11 @@
     </p>
   </header>
 
-  <section>
+  <section class="content">
     <%= yield %>
   </section>
 
-  <footer>
+  <footer class="footer">
     <div class="avatar center">
       <%= image_tag "avatar.png" %>
     </div>

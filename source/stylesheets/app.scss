@@ -1,4 +1,3 @@
-@import "responsive";
 @import "modularscale-sass/stylesheets/modular-scale";
 
 $ms-base:  1rem;
@@ -47,36 +46,34 @@ body {
   color:              hsl(0, 0%, 10%);
 }
 
-body > header {
+.header {
   font-size: 0.9rem;
 }
 
-body > section {
+.content {
   margin: 5em 0;
 }
 
-body > footer {
-  .avatar img {
-    width:          7.5em;
-    height:         7.5em;
-    max-width:      7.5em;
-    max-height:     7.5em;
-    border-radius:  50%;
-    vertical-align: middle;
-  }
+.footer .avatar img {
+  width: 7.5em;
+  height: 7.5em;
+  max-width: 7.5em;
+  max-height: 7.5em;
+  border-radius:  50%;
+  vertical-align: middle;
+}
 
-  .name {
-    margin-top: 0.5rem;
-  }
+.footer .name {
+  margin-top: 0.5rem;
+}
 
-  .links {
-    font-size:     0.65rem;
-    margin-bottom: 3rem;
-  }
+.footer .links {
+  font-size: 0.65rem;
+  margin-bottom: 3rem;
+}
 
-  .links a {
-    margin: 0 0.3em;
-  }
+.footer .links a {
+  margin: 0 0.3em;
 }
 
 section > footer {
@@ -134,35 +131,42 @@ section > footer {
   display:    block;
 }
 
-.post {
-  p, span, hr,
-  ul, ol, dl {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
+.post p,
+.post span,
+.post hr,
+.post ul,
+.post ol,
+.post dl {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
-  pre {
-    margin: 0;
-  }
+.post pre {
+  margin: 0;
+}
 
-  code {
-    background-color: hsl(0, 0%, 97%);
-  }
+.post code {
+  background-color: hsl(0, 0%, 97%);
+}
 
-  p code {
-    padding:          0.14em 0.28em;
-    background-color: hsl(0, 0%, 96%);
-  }
+.post p code {
+  padding: 0.14em 0.28em;
+  background-color: hsl(0, 0%, 96%);
+}
 
-  pre,
-  code {
-    font-family: "inconsolata", monospace;
-  }
+.post pre,
+.post code {
+  font-family: "inconsolata", monospace;
 }
 
 .post > hr {
@@ -174,29 +178,27 @@ section > footer {
   width:  20%;
 }
 
-.archives {
-  @media screen and (min-width: 800px) {
-    .archive-group {
-      position: relative;
-    }
+.archives .group-name {
+  color: hsl(0, 0%, 50%);
+}
 
-    .group-name {
-      position: absolute;
-      left:     -3.5em;
-    }
+.archives .archive-group > .group-contents {
+  margin: 1em 0;
+}
+
+.archives .archive-group > .group-contents li {
+  margin: 0.4em 0;
+  line-height: 1.25;
+}
+
+@media screen and (min-width: 800px) {
+  .archives .archive-group {
+    position: relative;
   }
 
-  .group-name {
-    color: hsl(0, 0%, 50%);
-  }
-
-  .archive-group > .group-contents {
-    margin: 1em 0;
-
-    li {
-      margin:      0.4em 0;
-      line-height: 1.25;
-    }
+  .archives .group-name {
+    position: absolute;
+    left: -3.5em;
   }
 }
 
@@ -221,47 +223,45 @@ section > footer {
   }
 }
 
-.pagination {
-  &:hover {
-    width:   13.6rem;
-    opacity: 1.0;
-  }
+.pagination:hover {
+  width: 13.6rem;
+  opacity: 1.0;
+}
 
-  &.hidden {
-    opacity: 0;
-  }
+.pagination.hidden {
+  opacity: 0;
+}
 
-  &.newer {
-    left: 5px;
+.pagination.newer {
+  left: 5px;
+}
 
-    .title {
-      margin-left: -0.4rem;
-      text-align:  left;
-    }
-  }
+.pagination.newer .title {
+  margin-left: -0.4rem;
+  text-align:  left;
+}
 
-  &.older {
-    right:     5px;
-    direction: rtl;
+.pagination.older {
+  right: 5px;
+  direction: rtl;
+}
 
-    .title {
-      margin-right: -0.4rem;
-      text-align:   right;
-    }
-  }
+.pagination.older .title {
+  margin-right: -0.4rem;
+  text-align: right;
+}
 
-  .icon {
-    width:          4.5rem;
-    vertical-align: middle;
-  }
+.pagination .icon {
+  width: 4.5rem;
+  vertical-align: middle;
+}
 
-  .title {
-    width:          9rem;
-    white-space:    normal;
-    vertical-align: middle;
-    margin-top:     0.4em;
-    display: none;
-  }
+.pagination .title {
+  width: 9rem;
+  white-space: normal;
+  vertical-align: middle;
+  margin-top: 0.4em;
+  display: none;
 }
 
 @media screen and (min-width: 1300px) {

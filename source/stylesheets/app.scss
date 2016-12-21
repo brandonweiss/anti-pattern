@@ -30,19 +30,15 @@ a {
 
 html {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  @include responsive("font-size", 14px,
-    (
-      400px:  16px,
-      500px:  17px,
-      600px:  18px,
-      700px:  19px,
-      800px:  20px,
-      900px:  21px,
-      1000px: 22px
-    )
-  );
 }
+
+@media screen and (min-width: 400px)  { html { font-size: 16px } }
+@media screen and (min-width: 500px)  { html { font-size: 17px } }
+@media screen and (min-width: 600px)  { html { font-size: 18px } }
+@media screen and (min-width: 700px)  { html { font-size: 19px } }
+@media screen and (min-width: 800px)  { html { font-size: 20px } }
+@media screen and (min-width: 900px)  { html { font-size: 21px } }
+@media screen and (min-width: 1000px) { html { font-size: 22px } }
 
 body {
   animation-name:     fade-in;
@@ -94,35 +90,28 @@ section > footer {
   &:last-of-type  { margin-bottom: 0; }
 }
 
-.post > *,
+.post > *:not(.highlight),
 .archives {
-  @include responsive("padding-left" "padding-right", 3%,
-    (
-      400px:  5%,
-      500px:  8%,
-      600px:  11%,
-      700px:  14%,
-      800px:  16%,
-      900px:  18%,
-      1000px: 20%,
-      1100px: 22%,
-      1200px: 24%,
-      1300px: 26%,
-      1400px: 28%,
-      1500px: 29%,
-      1600px: 30%,
-      1700px: 31%,
-      1800px: 32%,
-      1900px: 33%
-    )
-  );
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 92vw;
+  max-width: 30rem;
 }
 
 .post .highlight {
   padding-top:      1em;
   padding-bottom:   1em;
   padding-right:    1em;
+  padding-left: 4%;
   background-color: hsl(0, 0%, 97%);
+  overflow-x: scroll;
+}
+
+@media screen and (min-width: 555px) {
+  .post .highlight {
+    padding-left: calc((100vw - 30rem) / 2);
+  }
 }
 
 .post .highlight + .footnotes {
@@ -148,11 +137,13 @@ section > footer {
 .post {
   p, span, hr,
   ul, ol, dl {
-    margin: 1em 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin: 0.5em 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   pre {
@@ -176,27 +167,6 @@ section > footer {
 
 .post > hr {
   padding: 0;
-
-  @include responsive("margin-left" "margin-right", 3%,
-    (
-      400px:  5%,
-      500px:  8%,
-      600px:  11%,
-      700px:  14%,
-      800px:  16%,
-      900px:  18%,
-      1000px: 20%,
-      1100px: 22%,
-      1200px: 24%,
-      1300px: 26%,
-      1400px: 28%,
-      1500px: 29%,
-      1600px: 30%,
-      1700px: 31%,
-      1800px: 32%,
-      1900px: 33%
-    )
-  );
 }
 
 .post .footnotes hr {
@@ -239,16 +209,19 @@ section > footer {
   white-space: nowrap;
   color:       inherit;
   opacity:     0.1;
+  display: none;
 
   transition: width 0.20s ease,
               opacity 0.25s ease;
+}
 
-  @include responsive("display", "none",
-    (
-      750px: "block",
-    )
-  );
+@media screen and (min-width: 750px) {
+  .pagination {
+    display: block;
+  }
+}
 
+.pagination {
   &:hover {
     width:   13.6rem;
     opacity: 1.0;
@@ -284,15 +257,15 @@ section > footer {
 
   .title {
     width:          9rem;
-    display:        inline-block;
     white-space:    normal;
     vertical-align: middle;
     margin-top:     0.4em;
+    display: none;
+  }
+}
 
-    @include responsive("display", "none",
-      (
-        1000px: "inline-block",
-      )
-    );
+@media screen and (min-width: 1300px) {
+  .pagination .title {
+    display: inline-block;
   }
 }

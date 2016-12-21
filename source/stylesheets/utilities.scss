@@ -7,13 +7,13 @@
   padding-left: 0;
 }
 
-.show-medium {
+.show-small {
   @media screen and (max-width: 475px) {
     display: none;
   }
 }
 
-.show-large {
+.show-medium {
   @media screen and (max-width: 650px) {
     display: none;
   }

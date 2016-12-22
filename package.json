@@ -15,7 +15,6 @@
     "sass-brunch": "^2.6.3"
   },
   "dependencies": {
-    "modularscale-sass": "~> 2.1.1",
     "normalize.css": "~> 4.1.1"
   }
 }

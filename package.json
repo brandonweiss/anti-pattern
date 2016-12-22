@@ -8,10 +8,10 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer-brunch": "^1.8.5",
     "brunch": "^2.9.1",
     "javascript-brunch": "^2.0.0",
-    "postcss-brunch": "^2.0.5"
+    "postcss-brunch": "^2.0.5",
+    "autoprefixer": "^6.5.4"
   },
   "dependencies": {
     "normalize.css": "~> 4.1.1"

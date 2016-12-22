@@ -2,14 +2,18 @@ module.exports = {
 
   paths: {
     public: "./tmp/dist",
-    watched: ["./source/javascripts/", "./source/stylesheets/"]
+    watched: [
+      "./source/javascripts/",
+      "./source/stylesheets/",
+      "./node_modules/normalize.css/"
+    ]
   },
 
   files: {
     javascripts: { joinTo: "javascripts/application.js" },
     stylesheets: {
       joinTo: {
-        "stylesheets/application.css": /application\.scss/
+        "stylesheets/application.css": /\.css$/
       }
     }
   },
@@ -27,12 +31,6 @@ module.exports = {
   optimize: true,
 
   plugins: {
-    sass: {
-      options: {
-        includePaths: ["./node_modules"]
-      }
-    },
-
     autoprefixer: {
       browsers: ["last 1 version", "IE >= 10", "Safari >= 7"]
     }

@@ -7,14 +7,14 @@
   padding-left: 0;
 }
 
-.show-small {
-  @media screen and (max-width: 475px) {
+@media screen and (max-width: 475px) {
+  .show-small {
     display: none;
   }
 }
 
-.show-medium {
-  @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
+  .show-medium {
     display: none;
   }
 }

@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 ruby   "2.3.1"
 
-gem "middleman",               "~> 4.1.10"
+gem "middleman",               "~> 4.1.14"
 gem "middleman-blog",          "~> 4.0.1"
 gem "middleman-syntax",        "~> 3.0.0"
 gem "redcarpet",               "~> 3.3.4"

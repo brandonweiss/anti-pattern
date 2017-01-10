@@ -19,12 +19,14 @@ module.exports = {
   },
 
   modules: {
-    definition: false,
     wrapper: false
   },
 
   npm: {
-    enabled: false
+    enabled: true,
+    globals: {
+      Sonar: "sonar-js"
+    },
   },
 
   sourceMaps: false,

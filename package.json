@@ -7,9 +7,13 @@
     "url": "git+https://github.com/brandonweiss/anti-pattern.com.git"
   },
   "license": "ISC",
+  "scripts": {
+    "deploy": "discharge deploy"
+  },
   "devDependencies": {
     "autoprefixer": "^6.5.4",
     "brunch": "^2.9.1",
+    "discharge": "^0.1.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "^2.0.5"
   },

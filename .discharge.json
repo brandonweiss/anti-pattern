@@ -1,0 +1,18 @@
+{
+  "domain": "anti-pattern.com",
+  "upload_directory": "build",
+  "build_command": "bundle exec middleman build",
+  "index_key": "index.html",
+  "error_key": "404.html",
+  "trailing_slashes": false,
+  "cache": 3600,
+  "redirects": [
+    {
+      "prefix_match": "/the-culture-that-creates-the-problem-is-never-the-culture-that-fixes-the-problem",
+      "destination": "/always-now-never-later"
+    }
+  ],
+  "aws_profile": "website-deployment",
+  "aws_region": "us-west-1",
+  "dns_configured": true
+}

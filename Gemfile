@@ -1,5 +1,5 @@
-source "http://rubygems.org"
-ruby   "2.3.1"
+source "https://rubygems.org"
+ruby   "2.5.1"
 
 gem "middleman",               "~> 4.2.1"
 gem "middleman-blog",          "~> 4.0.2"

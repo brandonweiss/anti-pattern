@@ -24,9 +24,6 @@ module.exports = {
 
   npm: {
     enabled: true,
-    globals: {
-      Sonar: "sonar-js"
-    },
   },
 
   sourceMaps: false,

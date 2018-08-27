@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "normalize.css": "~> 4.1.1",
-    "sonar-js": "^0.1.0"
+    "sonar-js": "^1.0.0"
   }
 }

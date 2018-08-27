@@ -1,3 +1,5 @@
+var Sonar = require("sonar-js/dist/sonar.js")
+
 document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".pagination.newer")) {
     document.addEventListener("keydown", function(event) {

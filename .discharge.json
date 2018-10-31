@@ -10,10 +10,6 @@
     {
       "prefix_match": "/the-culture-that-creates-the-problem-is-never-the-culture-that-fixes-the-problem",
       "destination": "/always-now-never-later"
-    },
-    {
-      "prefix_match": "/litanty-against-distraction",
-      "destination": "/litany-against-distraction"
     }
   ],
   "aws_profile": "website-deployment",

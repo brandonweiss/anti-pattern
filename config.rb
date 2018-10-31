@@ -5,18 +5,14 @@ Bundler.require(ENV["RACK_ENV"].to_sym)
 require "middleman-core/renderers/redcarpet"
 Middleman::Renderers::MiddlemanRedcarpetHTML.include Redcarpet::Render::HTMLAbbreviations
 
-require "lib/render_markdown_files_as_html"
-activate :render_markdown_files_as_html
-
 configure :server do
   activate :livereload
 end
 
 activate :blog do |blog|
-  blog.sources           = "posts/{year}-{month}-{day}-{title}"
+  blog.sources           = "posts/{year}-{month}-{day}-{title}.html"
   blog.permalink         = "{title}"
   blog.layout            = "post"
-  blog.default_extension = ".md"
 end
 
 activate :syntax

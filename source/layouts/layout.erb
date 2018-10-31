@@ -2,10 +2,11 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1.0, width=device-width">
-
   <title><%= current_page.data.title %></title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta name="author" content="Brandon Weiss" />
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
@@ -14,6 +15,8 @@
   <script>try{Typekit.load();}catch(e){}</script>
 
   <link rel="alternate" type="application/atom+xml" title="Anti-pattern" href="/feed">
+
+  <%= yield_content :head %>
 </head>
 
 <body>

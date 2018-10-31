@@ -2,40 +2,32 @@
 title: Dirty Associations with ActiveRecord
 ---
 
-Imagine you have a system in which it’s advantageous to know when an object was last updated. Perhaps it’s just useful for users to know how fresh the data is, or maybe some operations need to run only on recently updated objects.
+ActiveRecord automatically keeps track of when a record was created and updated, but what about when an association is created? Does that also count as an update?
 
-With ActiveRecord this is really simple, because it automatically looks for `DateTime` fields called `created_at` and `updated_at`, and if they exist will update them when an object is created and updated, respectively. But what about associations?
+If a `blog` has many `posts` and you add a new `post` to the `blog`, has the `blog` been updated? Maybe not technically, but conceptually, perhaps it has. When I write a new post I might say “I’ve updated my blog”. If I had a timestamp that showed when my blog was last updated what I probably mean is when the last post was written. You could calculate that timestamp dynamically with a query, but it could make more sense to update the timestamp of the parent model.
 
-For example, if a `lolrus` has and belongs to many `buckets`, and you add a new `bucket` to that `lolrus`, has that `lolrus` then been updated? From a framework perspective, no. The `lolrus` object never changed, nor did the `bucket` object, just a new relation was created between them. No objects were updated. But from a user’s perspective, yes, they updated information on the `lolrus`, so the `updated_at` field on the `lolrus` _should_ reflect the current data and time. But it won't.
-
-When you update fields on a model, those changes are tracked in a hash. And when a model is saved, it calls a method called `changed?`, which checks to see whether or not the hash is empty. If it's empty, ostensibly nothing changed, and so the `updated_at` timestamp is left alone. If it's not empty, then one or more attributes changed and the `updated_at` is set to the current time. But associations are **not** tracked in this hash, so modifying them will not flag a model as being dirty, and thus the timestamp will never be updated. This isn't a bug—it's working as intended—but in certain situations that behavior is not going to be what the user expects.
-
-So if you want to update the timestamp of an object when the associations change as well, here's how you do it:
+When you update attributes on a model those changes are tracked in a “dirty” hash. When the model is saved it calls the `changed?` method which checks the hash to see if there’s anything in it. If there is then the `updated_at` timestamp is set to the current time. But associations are **not** tracked in this hash, so modifying them will not flag a model as being dirty. This is how you can override that behavior.
 
 ```ruby
 # app/models/dirty_associations.rb
 module DirtyAssociations
-  attr_accessor :dirty
 
-  def make_dirty(record)
-    self.dirty = true
+  attr_accessor :dirty_associations?
+
+  def dirty_associations(_record)
+    self.dirty_associations? = true
   end
 
   def changed?
-    dirty || super
+    dirty_associations? || super
   end
+
 end
 
-# app/models/lolrus.rb
-class Lolrus
+# app/models/blog.rb
+class Blog
   include DirtyAssociations
 
-  has_and_belongs_to_many :buckets,
-                          :after_add    => :make_dirty,
-                          :after_remove => :make_dirty
+  has_many :posts, { after_add: :dirty_associations, after_remove: :dirty_associations }
 end
 ```
-
-This works because callbacks can be defined on ActiveRecord associations. When an object is added or removed from the collection, the `make_dirty` callback will be triggered and a virtual attribute representing whether or not the object is dirty will get set to `true`. Then when `changed?` is called to check whether an object is dirty, it will check the virtual attribute first before deferring to `super`.
-
-Mad props to [Tim Galeckas](http://twitter.com/timgaleckas) for helping me sort this one out. You don’t even want to know the janky shit I had half-written to solve this.

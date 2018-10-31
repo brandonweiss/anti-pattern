@@ -10,6 +10,9 @@
     {
       "prefix_match": "/the-culture-that-creates-the-problem-is-never-the-culture-that-fixes-the-problem",
       "destination": "/always-now-never-later"
+    }, {
+      "prefix_match": "/you-had-better-be-able-to-answer-these-questions-in-an-interview",
+      "destination": "/interview-questions"
     }
   ],
   "aws_profile": "website-deployment",

@@ -2,11 +2,11 @@
 title: Testing the Protocol, Subdomain, and Host of a Rack App with Rack::Test
 ---
 
-I've used [Rack::Test][rack-test] to test Rails and other rack-based frameworks for a long time, but the first time I needed to test the protocol (scheme) of an app I was stumped.
+I’ve used [Rack::Test][rack-test] to test Rails and other rack-based frameworks for a long time, but the first time I needed to test the protocol (“http” or “https”) of an app I was stumped.
 
 I wanted to write a test that ensured that non-HTTPS requests were rejected in production, but the request methods in Rack::Test take a path (e.g. `get "/blog"`) and the protocol/host always defaults to "http://example.org".
 
-The code being tested eventually looked like this.
+The code being tested looked like this.
 
 ```ruby
 class API < Grape::API
@@ -36,7 +36,7 @@ class API < Grape::API
 end
 ```
 
-After doing some code diving in the relevant parts of Rack::Test I discovered that although it doesn't seem to be explicitly documented anywhere and I'd never seen it done before, Rack::Test actually supports making requests to full URLs, which means you can use it to test the protocol, subdomain, and host of a request!
+After doing some spelunking in the relevant parts of Rack::Test I discovered that although it doesn’t seem to be explicitly documented anywhere and I’d never seen it done before, Rack::Test actually supports making requests to full URLs, which means you can use it to test the protocol, subdomain, and host of a request!
 
 ```ruby
 describe API do

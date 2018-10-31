@@ -2,7 +2,7 @@
 title: Strip Leading Whitespace from Heredocs in Ruby
 ---
 
-**Update**: Starting in Ruby 2.3 this can be done natively with the squiggly heredoc. Using a tilde instead of a hyphen will strip the leading whitespace.
+**Update**: Starting in Ruby 2.3 this can be done natively with the “squiggly” heredoc. Using a tilde instead of a hyphen will strip the leading whitespace.
 
 ```ruby
 <<~EOS
@@ -14,7 +14,7 @@ EOS
 
 ---
 
-A "heredoc" in programming is short for "here document". If you're not familiar with the concept I encourage you to [read up on it][heredoc]. It's basically a way to declare a file or long string inline. Formatting is preserved and quotes are ignored, which means strings with quotes in them don't have to be escaped.
+A “heredoc” in programming is short for "here document". If you’re not familiar with the concept I encourage you to [read up on it][heredoc]. It’s a way to declare a file or long, multiline string inline. Formatting is preserved and quotes are ignored, which means strings with quotes in them don’t have to be escaped.
 
 For example, if you needed a string with some spacing, indentation, and quotes you could do something like this:
 
@@ -22,7 +22,7 @@ For example, if you needed a string with some spacing, indentation, and quotes y
 "<pre>\n  <code>puts \"foobar\"</code>\n<pre>"
 ```
 
-But reading and writing that hurts my brain. With a heredoc you could just do this[^1]:
+But reading and writing that is difficult. With a heredoc you could do this[^1]:
 
 ```ruby
 <<-EOS
@@ -34,7 +34,7 @@ EOS
 
 There are all sorts of uses for heredocs, but I find them especially useful in tests when I need to compare some kind of long, formatted output.
 
-Case in point, we just switched to [Redcarpet][redcarpet] to process the very Markdown with which we write this blog. But before I did I wrote several tests, one of which ensures that Redcarpet renders [fenced code blocks][fenced-code-blocks].
+Case in point, I just switched to [Redcarpet][redcarpet] to process the Markdown this blog is written in. But before I did I wrote several tests, one of which ensures that Redcarpet renders [fenced code blocks][fenced-code-blocks].
 
 ```ruby
 describe "render_html_from_markdown" do
@@ -74,11 +74,11 @@ describe "render_html_from_markdown" do
 end
 ```
 
-The HTML output isn't quite formatted how I would have done it by hand, but the important thing is that the test is _significantly_ more readable.
+The HTML output isn’t quite formatted how I would have done it by hand, but the important thing is that the test is _significantly_ more readable.
 
-There is, however, one problem—the test actually fails now. It fails because I've indented the heredocs for readability, like you would normally with any code, but the leading whitespace of the indentation is interpreted as formatting for the heredoc, unfortunately causing the strings to mismatch.
+There is, however, one problem—the test actually fails now. It fails because I’ve indented the heredocs for readability, like you would normally with any code, but the leading whitespace of the indentation is interpreted as formatting for the heredoc, unfortunately causing the strings to mismatch.
 
-If you're using Rails (or ActiveSupport) there's a  [`strip_heredoc`][strip-heredoc] helper method that solves this very problem. It looks for the least indented line in the string and removes that amount of leading whitespace from each line[^2].
+If you’re using Rails (or ActiveSupport) there’s a [`strip_heredoc`][strip-heredoc] helper method that solves this problem. It looks for the least indented line in the string and removes that amount of leading whitespace from each line[^2].
 
 ```ruby
 describe "render_html_from_markdown" do
@@ -103,7 +103,7 @@ describe "render_html_from_markdown" do
 end
 ```
 
-[^1]: The actual acronym or word you use to delimit the heredoc doesn't really matter. The two most common are EOS (end of string) and EOF (end of file), but you can use anything you like (e.g., "SQL").
+[^1]: The actual acronym or word you use to delimit the heredoc doesn’t really matter. The two most common are EOS (end of string) and EOF (end of file), but using semantic names like “SQL” is even better.
 
 [^2]: The syntax is admittedly a little awkward but methods called on heredocs are called on the _starting_ delimiter.
 

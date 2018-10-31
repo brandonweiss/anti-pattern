@@ -2,7 +2,7 @@
 title: Shared Examples with Minitest
 ---
 
-I rarely if ever apply DRY principles to the tests I write. What might improve application code does not necessarily improve test code. Tests should be as verbose and repetitive as they need to be. If you can't look at an individual test and understand exactly what's going on without looking through several `before` blocks or nested contexts, then something is probably wrong. It's better to be a bit more verbose and repeat yourself a little than make your tests unreadable.
+I rarely if ever apply DRY principles to the tests I write. What might improve application code does not necessarily improve test code. Tests should be as verbose and repetitive as they need to be. If you can’t look at an individual test and understand exactly what’s going on without looking through several `before` blocks or nested contexts, then something is probably wrong. It’s better to be a bit more verbose and repeat yourself a little than make your tests unreadable.
 
 That said, sometimes you need to repeat nearly the exact same test over and over again. A good example would be for a `before_action` in a controller that ensures a user is authenticated.
 
@@ -53,9 +53,9 @@ describe MonitorsController do
 end
 ```
 
-You'd have to repeat almost this exact same test for every action, the only thing that would change is the controller and action being requested. This is a perfect candidate for a shared test.
+You’d have to repeat almost this exact same test for every action, the only thing that would change is the controller and action being requested. This is a perfect candidate for a shared test.
 
-If you're familiar with RSpec you might know that it has a feature for this called [shared examples][shared-examples]. Minitest has no corresponding equivalent, and rightly so; sharing tests is an edge case. This pretty well highlights the fundamental difference between RSpec and Minitest: RSpec is everything you might ever need; Minitest is just what you'll probably need. Since Minitest has no built-in facility for sharing tests, you can just implement your own.[^1]
+If you’re familiar with RSpec you might know that it has a feature for this called [shared examples][shared-examples]. Minitest has no corresponding equivalent because sharing tests is an edge case. This pretty well highlights the fundamental difference between RSpec and Minitest: RSpec is everything you might ever need; Minitest is just what you’ll probably need. Since Minitest has no built-in facility for sharing tests, you can just implement your own.[^1]
 
 ```ruby
 # test/test_helper.rb
@@ -87,8 +87,8 @@ describe MonitorsController do
 end
 ```
 
-There's no magic—it's just plain Ruby.
+No magic, it’s just Ruby.
 
 [shared-examples]: https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples
 
-[^1]: I'm defining the class method on `Minitest::Spec` but where you define the class method depends on what framework you're using and how you integrated Minitest into it. For Rails, the class you probably need to define it on is `ActiveSupport::TestCase`.
+[^1]: I’m defining the class method on `Minitest::Spec` but where you define the class method depends on what framework you’re using and how you integrated Minitest into it. For Rails, the class you probably need to define it on is `ActiveSupport::TestCase`.

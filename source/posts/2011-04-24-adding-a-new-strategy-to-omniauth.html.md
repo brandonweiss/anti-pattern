@@ -2,11 +2,9 @@
 title: Adding a New Strategy to OmniAuth
 ---
 
-Recently I had to authenticate with a service ([Rdio][rdio]) that [OmniAuth][omniauth] didn't support yet. I'd never created an authentication strategy before, so I looked up how to do it in the [wiki][wiki]. The supposed [Strategy Contribution Guide][guide] was rather... sparse, so I had to roll up my sleeves and figure it out.
+Recently I had to authenticate with ([Rdio][rdio]), a service that [OmniAuth][omniauth] didn’t support. I’d never created an authentication strategy for OmniAuth before, so here’s how I did it and what I learned.
 
-First, you need to set up an environment to work on the gem. So fork the [official repo][omniauth] and then clone your fork. If you don't have [bundler][bundler], install it, then `bundle install` from inside your cloned repo.[^1] Run the tests with `bundle exec rake spec` and you should see all green.
-
-OmniAuth supports multiple different authentication schemes, but [Rdio][rdio] thankfully uses [OAuth][oauth]. Each authentication scheme has a separate gem/directory, so I looked in `oa-oauth/lib/omniauth/strategies` to see how other OAuth strategies had been implemented. OAuth has a few different versions now, so make sure you're looking at examples that use the same OAuth version as the API you're trying to connect to supports. Rdio uses OAuth 1.0, so those are the strategies I looked at.
+OmniAuth supports multiple different authentication schemes, but [Rdio][rdio] thankfully uses [OAuth][oauth]. Each authentication scheme has a separate gem/directory, so I looked in `oa-oauth/lib/omniauth/strategies` to see how other OAuth strategies had been implemented. OAuth has a few different versions now, so make sure you’re looking at examples that use the same OAuth version as the API you’re trying to connect to supports. Rdio uses OAuth 1.0, so those are the strategies I looked at.
 
 I started by copying the module/class structure from another strategy into a new file and renaming the class where appropriate.
 
@@ -29,7 +27,7 @@ module OmniAuth
 end
 ```
 
-Then I started looking for other similarities among the various strategies. There's a fair bit of variance in which methods are implemented and the naming of variables, but the first method that all strategies had in common was `initialize`.
+Then I started looking for other similarities among the various strategies. There’s a fair bit of variance in which methods are implemented and the naming of variables, but the first method that all strategies had in common was `initialize`.
 
 ```ruby
 # oa-oauth/lib/omniauth/strategies/rdio.rb
@@ -52,33 +50,33 @@ The next common method was `auth_hash`. The [auth_hash][auth_hash] is the data t
 # oa-oauth/lib/omniauth/strategies/rdio.rb
 def auth_hash
   OmniAuth::Utils.deep_merge(super, {
-    'uid'       => user_hash['key'],
-    'user_info' => user_info,
-    'extra'     => { 'user_hash' => user_hash }
+    "uid"       => user_hash["key"],
+    "user_info" => user_info,
+    "extra"     => { "user_hash" => user_hash }
   })
 end
 
 def user_info
   user = user_hash
   {
-    'nickname'   => user['username'],
-    'first_name' => user['firstName'],
-    'last_name'  => user['lastName'],
-    'name'       => "#{user['firstName']} #{user['lastName']}"
+    "nickname"   => user["username"],
+    "first_name" => user["firstName"],
+    "last_name"  => user["lastName"],
+    "name"       => "#{user['firstName']} #{user['lastName']}"
   }
 end
 
 def user_hash
   @user_hash ||= MultiJson.decode(@access_token.post("http://api.rdio.com/1/", {
-    :method => 'currentUser',
-    :extras => 'username'
-  }).body)['result']
+    :method => "currentUser",
+    :extras => "username"
+  }).body)["result"]
 end
 ```
 
-This part required a bit of trial and error, because although the docs indicate what fields are required, they don't say which are returned automatically and which have to be retrieved from the provider's API. Eventually I figured out that `provider` and `credentials` are automatically set, everything else has to be retrieved from the API. Look in the API docs for the specific request that will return information about the current user. Hopefully the docs are good and/or they have an API explorer so you can play around with it and see exactly what data is returned and in what format it's in.
+This part required a bit of trial and error, because although the docs indicate what fields are required, they don’t say which are returned automatically and which have to be retrieved from the provider’s API. Eventually I figured out that `provider` and `credentials` are automatically set, everything else has to be retrieved from the API. Look in the API docs for the specific request that will return information about the current user. Hopefully the docs are good and/or they have an API explorer so you can play around with it and see exactly what data is returned and in what format it’s in.
 
-Once you've got that figured out, map the fields returned to their appropriate values in the `auth_hash`. A fairly common pattern is to also just stick the whole hash returned under `extra`, in case there were some extra fields that couldn't be mapped.
+Once you’ve got that figured out, map the fields returned to their appropriate values in the `auth_hash`. A fairly common pattern is to also just stick the whole hash returned under `extra`, in case there were some extra fields that couldn’t be mapped.
 
 There are several other methods that some strategies implement, but after more trial and error it seems like the only two methods that absolutely have to be implemented are `initialize` and `auth_hash`.
 
@@ -86,13 +84,13 @@ Now make sure your new strategy is loaded.
 
 ```ruby
 # oa-oauth/lib/omniauth/oauth.rb
-require 'omniauth/core'
+require "omniauth/core"
 
 module OmniAuth
   module Strategies
     ...
 
-    autoload :Rdio, 'omniauth/strategies/rdio'
+    autoload :Rdio, "omniauth/strategies/rdio"
   end
 end
 ```
@@ -101,7 +99,7 @@ Create a test for it.
 
 ```ruby
 # oa-oauth/spec/omniauth/strategies/rdio_spec.rb
-require File.expand_path('../../../spec_helper', __FILE__)
+require File.expand_path("../../../spec_helper", __FILE__)
 
 describe OmniAuth::Strategies::Rdio do
   it_should_behave_like "an oauth strategy"
@@ -115,23 +113,18 @@ Update the readme.
 * Rdio (via [brandonweiss](http://github.com/brandonweiss))
 ```
 
-And you're done. Now you'll probably want to try it out to make sure it works. The easiest way is to just open up the project that's going to use the new strategy and edit the `Gemfile` to look for `omniauth` locally.
+And you’re done. Now you’ll probably want to try it out to make sure it works. The easiest way is to open up the project that’s going to use the new strategy and edit the `Gemfile` to look for `omniauth` locally.
 
 ```ruby
 # Gemfile
-gem 'omniauth', :path => '~/Code/omniauth'
+gem "omniauth", path: "~/Code/omniauth"
 ```
 
 `bundle install` then start the server and you should be good to go. If you messed something up, fix it, then restart the server to pick up the changes.
 
-OmniAuth is a really amazing gem. Hopefully this will make it easier for people to add more strategies.
-
-[^1]: Make sure you have the latest version of Bundler; I was on 1.0.7 and ran into gem version conflict errors. The fix was to upgrade to 1.0.12.
+OmniAuth is a really great gem. Hopefully this will make it easier for people to add more strategies.
 
 [omniauth]: https://github.com/intridea/omniauth
-[wiki]: https://github.com/intridea/omniauth/wiki
-[guide]: https://github.com/intridea/omniauth/wiki/Strategy-Contribution-Guide
-[bundler]: http://gembundler.com
 [rdio]: http://rdio.com
 [oauth]: http://oauth.net
 [auth_hash]: https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema

@@ -120,13 +120,6 @@ section > footer {
   color:           inherit;
 }
 
-.post .date {
-  margin-top: -0.25em;
-  font-size:  0.8rem;
-  color:      hsl(0, 0%, 50%);
-  display:    block;
-}
-
 .post p,
 .post span,
 .post hr,

@@ -3,10 +3,6 @@
     <h1 class="title">
       <%= link_to post.title, post.url %>
     </h1>
-
-    <span class="date">
-      <%= post.date.strftime("%B #{post.date.day.ordinalize}, %Y") %>
-    </span>
   </header>
 
   <%= post.body %>

@@ -1,5 +1,6 @@
 ---
 title: Always Use Double-quoted Strings in Ruby
+date: 2015/06/22
 ---
 
 Single-quoted strings or double-quoted strings; the eternal conflict rages on.

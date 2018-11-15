@@ -1,5 +1,6 @@
 ---
 title: Strip Leading Whitespace from Heredocs in Ruby
+date: 2014/02/11
 ---
 
 **Update**: Starting in Ruby 2.3 this can be done natively with the “squiggly” heredoc. Using a tilde instead of a hyphen will strip the leading whitespace.

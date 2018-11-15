@@ -1,5 +1,6 @@
 ---
 title: Bundler.setup vs. Bundler.require
+date: 2010/12/20
 ---
 
 There are two ways to use [Bundler](https://bundler.io) to require Ruby dependencies: manually with `Bundler.setup` and automatically with `Bundler.require`.

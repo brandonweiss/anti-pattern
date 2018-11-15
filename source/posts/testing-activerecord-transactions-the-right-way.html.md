@@ -1,5 +1,6 @@
 ---
 title: Testing ActiveRecord Transactions the Right Way
+date: 2014/05/20
 ---
 
 Database transactions are a way of making multiple queries to a database such that all of them must succeed or none of them will. This helps prevent data from getting into an unexpected state. Take for example a user signing up.

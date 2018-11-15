@@ -1,5 +1,6 @@
 ---
 title: Dirty Associations with ActiveRecord
+date: 2011/03/22
 ---
 
 ActiveRecord automatically keeps track of when a record was created and updated, but what about when an association is created? Does that also count as an update?

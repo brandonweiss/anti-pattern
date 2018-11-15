@@ -1,5 +1,6 @@
 ---
 title: Use Bundler.setup Instead of Bundler.require
+date: 2013/03/12
 ---
 
 For a long time I thought automatically requiring dependencies was significantly better than manually requiring them. It’s hard to remember now exactly how I arrived at this opinion, but it was certainly influenced by using Rails in the early days before [Bundler][bundler] existed.

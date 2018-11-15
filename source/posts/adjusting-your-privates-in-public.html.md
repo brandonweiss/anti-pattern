@@ -1,5 +1,6 @@
 ---
 title: Adjusting Your Privates in Public
+date: 2011/05/29
 ---
 
 Over the years I’ve developed a fairly strong opinion about how code should be indented and formatted. While much of formatting is subjective and comes down to personal preference, there are many times when it’s less objective and there are solid, logical arguments for choosing one style over another.

@@ -1,5 +1,6 @@
 ---
 title: Shared Examples with Minitest
+date: 2014/05/06
 ---
 
 I rarely if ever apply DRY principles to the tests I write. What might improve application code does not necessarily improve test code. Tests should be as verbose and repetitive as they need to be. If you can’t look at an individual test and understand exactly what’s going on without looking through several `before` blocks or nested contexts, then something is probably wrong. It’s better to be a bit more verbose and repeat yourself a little than make your tests unreadable.

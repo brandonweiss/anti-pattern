@@ -1,5 +1,6 @@
 ---
 title: Interview Questions
+date: 2011/01/21
 ---
 
 I’ve done enough interviewing—both as the interviewer and the interviewee—to see that most interviewers ask really poor questions that reveal very little useful information about the interviewee, and when interviewees _are_ asked good questions, they often have really poor answers to them.

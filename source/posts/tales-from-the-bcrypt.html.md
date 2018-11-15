@@ -1,5 +1,6 @@
 ---
 title: Tales from the BCrypt
+date: 2013/06/18
 ---
 
 **Update**: About three weeks after writing this `bcrypt-ruby` was finally updated to support externally setting the cost!

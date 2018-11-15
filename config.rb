@@ -10,7 +10,7 @@ configure :server do
 end
 
 activate :blog do |blog|
-  blog.sources           = "posts/{year}-{month}-{day}-{title}.html"
+  blog.sources           = "posts/{title}.html"
   blog.permalink         = "{title}"
   blog.layout            = "post"
 end

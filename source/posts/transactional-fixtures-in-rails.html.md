@@ -1,5 +1,6 @@
 ---
 title: Transactional Fixtures in Rails
+date: 2015/03/18
 ---
 
 If you use Ruby and write automated tests you’re probably familiar with [Database Cleaner][database cleaner]. It’s a gem for cleaning your database in between each test. What you _might_ not know is that if you use Rails, using Database Cleaner is entirely unnecessary because of transactional fixtures.

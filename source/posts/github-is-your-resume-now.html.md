@@ -1,5 +1,6 @@
 ---
 title: GitHub Is Your Resume Now
+date: 2012/06/17
 ---
 
 For programmers, the need to maintain and send a resume when applying for jobs seems to be dwindling. I will not miss the poorly formatted, badly designed Word templates filled with irrelevant information, all carefully massaged and stretched to make someone seem like the perfect fit. What someone has built and how they built it is far more useful information, and the easiest way to see that is on GitHub.

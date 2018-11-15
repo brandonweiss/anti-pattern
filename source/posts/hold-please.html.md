@@ -1,5 +1,6 @@
 ---
 title: Hold Please
+date: 2015/02/10
 ---
 
 The canonical example for an ActiveRecord callback is sending a welcome email after a `User` is created.

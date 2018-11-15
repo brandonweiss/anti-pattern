@@ -1,5 +1,6 @@
 ---
 title: Suppressing Notice Messages with PostgreSQL on Rails
+date: 2011/08/04
 ---
 
 If you’re using PostgreSQL then you might get those annoying notice messages when you do anything that alters the database schema. They look something like this:

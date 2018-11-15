@@ -1,5 +1,6 @@
 ---
 title: Railyard
+date: 2015/02/24
 ---
 
 Rails is a slightly unusual type of gem in that it is a dependency that is installed non-globally via Bundler, but in order to generate the application skeleton that uses Rails you first have to install Rails globally.

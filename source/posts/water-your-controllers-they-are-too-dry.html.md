@@ -1,5 +1,6 @@
 ---
 title: Water Your Controllers, They Are Too DRY
+date: 2014/04/21
 ---
 
 When you start out, your Rails controllers usually look something like this.

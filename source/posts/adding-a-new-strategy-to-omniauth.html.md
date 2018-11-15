@@ -1,5 +1,6 @@
 ---
 title: Adding a New Strategy to OmniAuth
+date: 2011/04/24
 ---
 
 Recently I had to authenticate with ([Rdio][rdio]), a service that [OmniAuth][omniauth] didn’t support. I’d never created an authentication strategy for OmniAuth before, so here’s how I did it and what I learned.

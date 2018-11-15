@@ -1,5 +1,6 @@
 ---
 title: Testing the Protocol, Subdomain, and Host of a Rack App with Rack::Test
+date: 2014/02/04
 ---
 
 I’ve used [Rack::Test][rack-test] to test Rails and other rack-based frameworks for a long time, but the first time I needed to test the protocol (“http” or “https”) of an app I was stumped.

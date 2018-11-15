@@ -1,5 +1,6 @@
 ---
 title: Always Now, Never Later
+date: 2014/04/29
 ---
 
 When building software, there is no such thing as “done”. There are always more ways to improve something, so “done” is effectively when people decide something is good enough and it’s time to move on to something else. How quickly you decide to move on to something else determines how much technical debt you’re incurring. The more time you spend on something initially, the less you’ll have to pay later. Whatever you don’t pay now, you’ll eventually have to pay back, plus interest.

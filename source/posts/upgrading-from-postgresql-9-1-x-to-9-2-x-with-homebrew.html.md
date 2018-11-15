@@ -1,5 +1,6 @@
 ---
 title: Upgrading from PostgreSQL 9.1.x to 9.2.x with Homebrew
+date: 2012/10/13
 ---
 
 **Update**: In later versions of Homebrew they added a command that automagically handles the upgrade for you!

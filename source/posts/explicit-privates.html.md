@@ -1,5 +1,6 @@
 ---
 title: Explicit Privates
+date: 2016/05/16
 ---
 
 Years ago I [wrote][old post] about the different styles of `private` declarations in Ruby and my personal preference. It was the best I could see at the time, but it was only marginally better than the rest and totally non-standard. Now I think I’ve finally arrived at a style that is superior to all of them.

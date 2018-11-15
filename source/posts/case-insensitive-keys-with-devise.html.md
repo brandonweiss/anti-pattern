@@ -1,5 +1,6 @@
 ---
 title: Case-insensitive Keys with Devise
+date: 2011/05/16
 ---
 
 If you use [Devise][devise] for authentication and use any database that is case-sensitive by default, like [PostgreSQL][postgresql], you’ve probably run into the problem that some users like to type some letters in their email or username in uppercase when creating their account, but then expect it to be case-insensitive when they try to sign in, which is not Devise’s default behavior.

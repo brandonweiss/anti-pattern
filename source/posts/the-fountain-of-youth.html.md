@@ -1,5 +1,6 @@
 ---
 title: The Fountain of Youth
+date: 2012/03/15
 ---
 
 Many smarter people before me have noted that time is the only truly limited resource. Pretty much everything else we can get more of, but time we can never get back. We’re using it literally all the time, and one day we’ve used it all up and then we’re done. I have far more things that I want to do than I could possibly fit into several lifetimes, so I find that having only one lifetime is rather unfortunate.

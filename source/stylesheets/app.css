@@ -24,7 +24,7 @@ a {
 }
 
 html {
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @media screen and (min-width: 400px)  { html { font-size: 16px } }
@@ -81,6 +81,10 @@ section > footer {
 
   &:first-of-type { margin-top:    0; }
   &:last-of-type  { margin-bottom: 0; }
+}
+
+.post p {
+  line-height: 1.4;
 }
 
 .post > *:not(.highlight),
@@ -146,6 +150,7 @@ section > footer {
 
 .post code {
   background-color: hsl(0, 0%, 97%);
+  font-size: 0.9em;
 }
 
 .post p code {
@@ -155,7 +160,7 @@ section > footer {
 
 .post pre,
 .post code {
-  font-family: "inconsolata", monospace;
+  font-family: "Menlo", "Consolas", monospace;
 }
 
 .post > hr {

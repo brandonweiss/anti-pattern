@@ -11,9 +11,9 @@
     "deploy": "discharge deploy"
   },
   "devDependencies": {
+    "@static/discharge": "^1.2.2",
     "autoprefixer": "^6.5.4",
     "brunch": "^2.9.1",
-    "discharge": "^0.7.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "^2.0.5"
   },

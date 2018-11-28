@@ -20,5 +20,10 @@
   "dependencies": {
     "normalize.css": "~> 8.0.0",
     "sonar-js": "^1.0.0"
-  }
+  },
+  "browserslist": [
+    ">0.50%",
+    "not ie 11",
+    "not op_mini all"
+  ]
 }

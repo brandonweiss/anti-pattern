@@ -7,6 +7,7 @@ gem "middleman-syntax",        "~> 3.0.0"
 gem "redcarpet",               "~> 3.4.0"
 gem "redcarpet-abbreviations", "~> 0.1.1"
 gem "builder",                 "~> 3.2.3"
+gem "yajl-ruby", "~> 1.4.1"
 
 group :development do
   gem "middleman-livereload", "~> 3.4.6"

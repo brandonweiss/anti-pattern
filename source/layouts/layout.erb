@@ -11,7 +11,8 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
 
-  <link rel="alternate" type="application/atom+xml" title="Anti-pattern" href="/feed">
+  <link rel="alternate" type="application/json" title="Anti-pattern" href="/feed.json" />
+  <link rel="alternate" type="application/atom+xml" title="Anti-pattern" href="/feed.xml" />
 
   <%= yield_content :head %>
 </head>

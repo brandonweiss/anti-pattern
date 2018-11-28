@@ -35,10 +35,11 @@ config[:markdown] = {
   hard_wrap:          true
 }
 
-config[:hostname]     = "http://anti-pattern.com"
+config[:hostname]     = "https://anti-pattern.com"
 config[:archive_path] = "/archive"
-config[:feed_path]    = "/feed"
+config[:feed_path]    = "/feed.json"
 
+page "/feed.json",   layout: false
 page "/feed.xml",    layout: false
 page "/sitemap.xml", layout: false
 

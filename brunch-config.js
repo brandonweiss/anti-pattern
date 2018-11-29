@@ -5,7 +5,7 @@ module.exports = {
     watched: [
       "./source/javascripts/",
       "./source/stylesheets/",
-      "./node_modules/normalize.css/"
+      "./node_modules/modern-normalize/"
     ]
   },
 

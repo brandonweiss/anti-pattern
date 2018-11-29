@@ -14,10 +14,6 @@ h1, .h1 { font-size: 2.48832rem; line-height: 1.20 }
   100%  { opacity: 1; }
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   color:           #4e9dd3;
   text-decoration: none;

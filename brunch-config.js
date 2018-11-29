@@ -32,7 +32,7 @@ module.exports = {
   plugins: {
     postcss: {
       processors: [
-        require("autoprefixer")(["last 1 version", "IE >= 10", "Safari >= 7"])
+        require("autoprefixer")
       ]
     }
   }

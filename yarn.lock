@@ -3331,9 +3331,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-sonar-js@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/sonar-js/-/sonar-js-1.0.0.tgz#b01af7a649c73294941182d4462b3d51587d8b24"
+sonar-js@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/sonar-js/-/sonar-js-1.1.0.tgz#53c3a22f438e21b69aa652c7d3b966d083ed4710"
+  integrity sha512-SCBAw3HsNNbkzpGprDPS82StIeslomctOuyEV6Sds4NfLVWgjdfoExOpbHxj33XKyjuBjt5vKdGcsjK1yEP0Yg==
 
 source-map-resolve@^0.5.0:
   version "0.5.2"

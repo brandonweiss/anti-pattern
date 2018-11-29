@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "modern-normalize": "^0.5.0",
-    "sonar-js": "^1.0.0"
+    "sonar-js": "^1.1.0"
   },
   "browserslist": [
     ">0.50%",

@@ -19,10 +19,6 @@ a {
   text-decoration: none;
 }
 
-html {
-  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 @media screen and (min-width: 400px)  { html { font-size: 16px } }
 @media screen and (min-width: 500px)  { html { font-size: 17px } }
 @media screen and (min-width: 600px)  { html { font-size: 18px } }
@@ -36,6 +32,7 @@ body {
   animation-duration: 0.3s;
   background-color:   hsl(0, 0%, 99%);
   color:              hsl(0, 0%, 10%);
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .header {

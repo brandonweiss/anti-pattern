@@ -19,13 +19,13 @@ a {
   text-decoration: none;
 }
 
-@media screen and (min-width: 400px)  { html { font-size: 16px } }
-@media screen and (min-width: 500px)  { html { font-size: 17px } }
-@media screen and (min-width: 600px)  { html { font-size: 18px } }
-@media screen and (min-width: 700px)  { html { font-size: 19px } }
-@media screen and (min-width: 800px)  { html { font-size: 20px } }
-@media screen and (min-width: 900px)  { html { font-size: 21px } }
-@media screen and (min-width: 1000px) { html { font-size: 22px } }
+@media screen and (min-width: 400px)  { html { font-size: 18px } }
+@media screen and (min-width: 500px)  { html { font-size: 19px } }
+@media screen and (min-width: 600px)  { html { font-size: 20px } }
+@media screen and (min-width: 700px)  { html { font-size: 21px } }
+@media screen and (min-width: 800px)  { html { font-size: 22px } }
+@media screen and (min-width: 900px)  { html { font-size: 23px } }
+@media screen and (min-width: 1000px) { html { font-size: 24px } }
 
 body {
   animation-name:     fade-in;

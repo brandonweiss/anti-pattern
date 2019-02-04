@@ -25,46 +25,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }, () => {
     paginationNodes.forEach((node) => node.classList.add("hidden"))
   })
-
-  if (window.localStorage.getItem("subscribed") !== "true") {
-    let subscriptionSonar = new Sonar(window)
-    let subscriptionNode = document.querySelector(".lw-widget")
-    let item = document.querySelector('.lw-item')
-
-    let showForm = (subscriptionNode, item) => {
-      subscriptionNode.classList.add("lw-open", "lw-animate")
-
-      item.classList.add("lw-animate")
-
-      setTimeout(() => {
-        item.classList.remove("lw-animate")
-        item.classList.add("lw-visible")
-      }, 400)
-    }
-
-    let hideForm = (subscriptionNode, item) => {
-      if (item.classList.contains("lw-visible")) {
-        item.classList.add("lw-animate-reverse")
-        item.classList.remove("lw-visible")
-
-        setTimeout(() => {
-          item.classList.remove('lw-animate-reverse')
-          subscriptionNode.classList.remove("lw-open", "lw-animate")
-        }, 400)
-      }
-    }
-
-    document.querySelector(".lw-close").addEventListener("click", () => hideForm(subscriptionNode, item))
-
-    subscriptionSonar.ping(350,
-      () => showForm(subscriptionNode, item),
-      () => hideForm(subscriptionNode, item),
-    )
-
-    let subscribeForm = document.querySelector(".lw-subscribe")
-
-    subscribeForm.addEventListener("submit", () => {
-      window.localStorage.setItem("subscribed", "true")
-    })
-  }
 })

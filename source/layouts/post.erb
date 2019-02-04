@@ -20,6 +20,8 @@
 
   <%= partial "post", locals: { post: current_article } %>
 
+  <%= partial "subscribe" %>
+
   <%= partial "pagination", locals: { older_post: current_article.article_previous, newer_post: current_article.article_next } %>
 
   <footer class="center">

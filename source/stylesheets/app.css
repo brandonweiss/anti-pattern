@@ -71,10 +71,10 @@ section > footer {
 
 .post {
   margin: 7rem 0;
-
-  &:first-of-type { margin-top:    0; }
-  &:last-of-type  { margin-bottom: 0; }
 }
+
+.post:first-of-type { margin-top:    0; }
+.post:last-of-type  { margin-bottom: 0; }
 
 .post p {
   line-height: 1.4;

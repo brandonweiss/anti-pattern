@@ -1,12 +1,5 @@
 {
-  "name": "anti-pattern",
-  "version": "0.0.0",
-  "description": "Asset pipeline",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brandonweiss/anti-pattern.com.git"
-  },
-  "license": "ISC",
+  "private": "true",
   "scripts": {
     "deploy": "discharge deploy"
   },

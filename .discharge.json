@@ -1,16 +1,16 @@
 {
   "domain": "anti-pattern.com",
-  "upload_directory": "build",
-  "build_command": "bundle exec middleman build",
+  "upload_directory": "tmp/build",
+  "build_command": "charge build source tmp/build",
   "index_key": "index.html",
   "error_key": "404.html",
-  "trailing_slashes": false,
   "cache": 300,
   "redirects": [
     {
       "prefix_match": "/the-culture-that-creates-the-problem-is-never-the-culture-that-fixes-the-problem",
       "destination": "/always-now-never-later"
-    }, {
+    },
+    {
       "prefix_match": "/you-had-better-be-able-to-answer-these-questions-in-an-interview",
       "destination": "/interview-questions"
     }

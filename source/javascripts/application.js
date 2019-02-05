@@ -1,4 +1,4 @@
-var Sonar = require("sonar-js/dist/sonar.js")
+import Sonar from "sonar-js/dist/sonar.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".pagination.newer")) {

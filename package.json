@@ -1,18 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "deploy": "discharge deploy"
+    "deploy": "discharge deploy",
+    "dev": "charge serve source"
   },
   "devDependencies": {
-    "@static/charge": "^1.2.0",
-    "@static/discharge": "^2.0.0",
-    "autoprefixer": "^9.5.0",
-    "brunch": "^2.10.17",
-    "javascript-brunch": "^2.0.0",
-    "postcss-brunch": "^2.10.1"
+    "@static/charge": "^0.5.0",
+    "@static/discharge": "^2.0.0"
   },
   "dependencies": {
+    "jsdom": "^13.2.0",
     "modern-normalize": "^0.5.0",
+    "sanitize-html": "^1.20.0",
     "sonar-js": "^1.1.0"
   },
   "browserslist": [

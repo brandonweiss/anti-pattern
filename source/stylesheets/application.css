@@ -1,0 +1,280 @@
+@import "modern-normalize/modern-normalize.css";
+@import "./syntax-highlighting.css";
+@import "./utilities.css";
+
+// Minor Third modular scale
+body    { font-size: 1rem;       line-height: 1.40 }
+h5, .h5 { font-size: 1.2rem;     line-height: 1.40 }
+h4, .h4 { font-size: 1.44rem;    line-height: 1.35 }
+h3, .h3 { font-size: 1.728rem;   line-height: 1.30 }
+h2, .h2 { font-size: 2.0736rem;  line-height: 1.25 }
+h1, .h1 { font-size: 2.48832rem; line-height: 1.20 }
+
+@keyframes fade-in {
+  0%    { opacity: 0; }
+  25%   { opacity: 0; }
+  50%   { opacity: 0; }
+  75%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+a {
+  color:           #4e9dd3;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 400px)  { html { font-size: 18px } }
+@media screen and (min-width: 500px)  { html { font-size: 19px } }
+@media screen and (min-width: 600px)  { html { font-size: 20px } }
+@media screen and (min-width: 700px)  { html { font-size: 21px } }
+@media screen and (min-width: 800px)  { html { font-size: 22px } }
+@media screen and (min-width: 900px)  { html { font-size: 23px } }
+@media screen and (min-width: 1000px) { html { font-size: 24px } }
+
+body {
+  animation-name:     fade-in;
+  animation-duration: 0.3s;
+  background-color:   hsl(0, 0%, 99%);
+  color:              hsl(0, 0%, 10%);
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header {
+  font-size: 0.9rem;
+}
+
+.content {
+  margin: 5em 0;
+}
+
+.footer .avatar img {
+  width: 7.5em;
+  height: 7.5em;
+  max-width: 7.5em;
+  max-height: 7.5em;
+  border-radius:  50%;
+  vertical-align: middle;
+}
+
+.footer .name {
+  margin-top: 0.5rem;
+}
+
+.footer .links {
+  font-size: 0.65rem;
+  margin-bottom: 3rem;
+}
+
+.footer .links a {
+  margin: 0 0.3em;
+}
+
+section > footer {
+  margin: 5em 0;
+}
+
+.post {
+  margin: 7rem 0;
+}
+
+.post:first-of-type { margin-top:    0; }
+.post:last-of-type  { margin-bottom: 0; }
+
+.post p {
+  line-height: 1.4;
+}
+
+.post > div > *:not(pre),
+.post header,
+.archives {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 92vw;
+  max-width: 30rem;
+}
+
+.post pre {
+  padding-top:      1em;
+  padding-bottom:   1em;
+  padding-right:    1em;
+  padding-left: 4%;
+  background-color: hsl(0, 0%, 97%);
+  overflow-x: scroll;
+}
+
+@media screen and (min-width: 555px) {
+  .post pre {
+    padding-left: calc((100vw - 30rem) / 2);
+  }
+}
+
+.post pre + .footnotes {
+  margin-top: 1.5em;
+}
+
+.post .title {
+  margin-bottom: 0.2em;
+}
+
+.post .title a {
+  text-decoration: none;
+  color:           inherit;
+}
+
+.post p,
+.post span,
+.post hr,
+.post ul,
+.post ol,
+.post dl {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.post pre {
+  margin: 0;
+}
+
+.post code {
+  background-color: hsl(0, 0%, 97%);
+  font-size: 0.9em;
+}
+
+.post p code,
+.post li code {
+  padding: 0.14em 0.28em;
+  background-color: hsl(0, 0%, 96%);
+}
+
+.post pre,
+.post code {
+  font-family: "Menlo", "Consolas", monospace;
+}
+
+.post > div > hr {
+  padding: 0;
+}
+
+.post > div .footnotes > hr {
+  margin: 0;
+  width:  20%;
+}
+
+.post .footnotes li {
+  line-height: 1.4;
+  margin: 1em 0;
+}
+
+.archives .group-name {
+  color: hsl(0, 0%, 50%);
+}
+
+.archives .archive-group > .group-contents {
+  margin: 1em 0;
+}
+
+.archives .archive-group > .group-contents li {
+  margin: 0.4em 0;
+  line-height: 1.25;
+}
+
+@media screen and (min-width: 800px) {
+  .archives .archive-group {
+    position: relative;
+  }
+
+  .archives .group-name {
+    position: absolute;
+    left: -3.5em;
+  }
+}
+
+.pagination {
+  position:    fixed;
+  top:         50%;
+  transform:   translateY(-50%);
+  width:       4rem;
+  overflow:    hidden;
+  white-space: nowrap;
+  color:       inherit;
+  opacity:     0.1;
+  display: none;
+
+  transition: width 0.20s ease,
+              opacity 0.25s ease;
+}
+
+@media screen and (min-width: 750px) {
+  .pagination {
+    display: block;
+  }
+}
+
+.pagination:hover {
+  width: 13.6rem;
+  opacity: 1.0;
+}
+
+.pagination.hidden {
+  opacity: 0;
+}
+
+.pagination.newer {
+  left: 5px;
+}
+
+.pagination.newer .title {
+  margin-left: -0.4rem;
+  text-align:  left;
+}
+
+.pagination.older {
+  right: 5px;
+  direction: rtl;
+}
+
+.pagination.older .title {
+  margin-right: -0.4rem;
+  text-align: right;
+}
+
+.pagination .icon {
+  width: 4.5rem;
+  vertical-align: middle;
+}
+
+.pagination .title {
+  width: 9rem;
+  white-space: normal;
+  vertical-align: middle;
+  margin-top: 0.4em;
+  display: none;
+}
+
+@media screen and (min-width: 1300px) {
+  .pagination .title {
+    display: inline-block;
+  }
+}
+
+.formkit-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 5em auto;
+  width: 92vw;
+}
+
+.formkit-form {
+  flex-grow: 1;
+}

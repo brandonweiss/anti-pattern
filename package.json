@@ -4,6 +4,7 @@
     "deploy": "discharge deploy"
   },
   "devDependencies": {
+    "@static/charge": "^0.5.0",
     "@static/discharge": "^1.2.2",
     "autoprefixer": "^9.3.1",
     "brunch": "^2.10.17",

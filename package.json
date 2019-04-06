@@ -5,7 +5,7 @@
   },
   "devDependencies": {
     "@static/charge": "^1.2.0",
-    "@static/discharge": "^1.2.2",
+    "@static/discharge": "^2.0.0",
     "autoprefixer": "^9.5.0",
     "brunch": "^2.10.17",
     "javascript-brunch": "^2.0.0",

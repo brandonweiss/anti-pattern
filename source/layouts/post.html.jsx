@@ -18,7 +18,7 @@ export default ({ children, environment, pages, title }) => {
   let element = React.createElement(currentPost.component)
   let html = ReactDOMServer.renderToStaticMarkup(element)
 
-  let firstParagraph = new JSDOM(html).window.document.querySelector("div > p:first-of-type").innerHTML
+  let firstParagraph = new JSDOM(html).window.document.querySelector("p:first-of-type").innerHTML
   let description = escape(sanitizeHTML(firstParagraph, { allowedAttributes: {}, allowedTags: [] }))
   let url = `https://anti-pattern.com${currentPost.path}`
 
@@ -41,9 +41,7 @@ export default ({ children, environment, pages, title }) => {
 
   return <Layout head={head} title={title} environment={environment}>
     <Post post={currentPost}>
-      <div className="body">
-        {children}
-      </div>
+      {children}
     </Post>
 
     <Subscribe />

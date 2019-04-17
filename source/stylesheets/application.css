@@ -84,7 +84,7 @@ section > footer {
   line-height: 1.4;
 }
 
-.post > div > *:not(pre),
+.post > *:not(pre),
 .post header,
 .archives {
   margin-left: auto;
@@ -162,11 +162,11 @@ section > footer {
   font-family: "Menlo", "Consolas", monospace;
 }
 
-.post > div > hr {
+.post > hr {
   padding: 0;
 }
 
-.post > div .footnotes > hr {
+.post .footnotes > hr {
   margin: 0;
   width:  20%;
 }

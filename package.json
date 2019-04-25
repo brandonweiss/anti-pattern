@@ -11,7 +11,7 @@
   "dependencies": {
     "jsdom": "^15.0.0",
     "modern-normalize": "^0.5.0",
-    "sanitize-html": "^1.20.0",
+    "sanitize-html": "^1.20.1",
     "sonar-js": "^1.1.0"
   },
   "browserslist": [

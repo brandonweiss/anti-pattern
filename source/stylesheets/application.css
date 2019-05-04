@@ -19,7 +19,7 @@ h1, .h1 { font-size: 2.48832rem; line-height: 1.20 }
 }
 
 a {
-  color:           #4e9dd3;
+  color: #4e9dd3;
   text-decoration: none;
 }
 
@@ -37,6 +37,7 @@ body {
   background-color:   hsl(0, 0%, 99%);
   color:              hsl(0, 0%, 10%);
   font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 1rem;
 }
 
 .header {
@@ -84,29 +85,23 @@ section > footer {
   line-height: 1.4;
 }
 
-.post > *:not(pre),
-.post header,
+.post,
 .archives {
   margin-left: auto;
   margin-right: auto;
-
-  width: 92vw;
   max-width: 30rem;
 }
 
 .post pre {
-  padding-top:      1em;
-  padding-bottom:   1em;
-  padding-right:    1em;
-  padding-left: 4%;
+  font-size: 0.8rem;
+  padding: 1rem;
   background-color: hsl(0, 0%, 97%);
   overflow-x: scroll;
-}
-
-@media screen and (min-width: 555px) {
-  .post pre {
-    padding-left: calc((100vw - 30rem) / 2);
-  }
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-radius: 5px;
 }
 
 .post pre + .footnotes {
@@ -140,10 +135,6 @@ section > footer {
 .post h6 {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-}
-
-.post pre {
-  margin: 0;
 }
 
 .post code {

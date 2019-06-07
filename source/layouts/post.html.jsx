@@ -6,6 +6,7 @@ import Post from "../components/post.html.jsx"
 import { JSDOM } from "jsdom"
 import sanitizeHTML from "sanitize-html"
 import ReactDOMServer from "react-dom/server"
+import escapeHTML from "escape-html"
 
 export default ({ children, environment, pages, title }) => {
   let posts = pages.filter((page) => page.meta.title && page.meta.date)
@@ -19,7 +20,7 @@ export default ({ children, environment, pages, title }) => {
   let html = ReactDOMServer.renderToStaticMarkup(element)
 
   let firstParagraph = new JSDOM(html).window.document.querySelector("p:first-of-type").innerHTML
-  let description = escape(sanitizeHTML(firstParagraph, { allowedAttributes: {}, allowedTags: [] }))
+  let description = escapeHTML(sanitizeHTML(firstParagraph, { allowedAttributes: {}, allowedTags: [] }))
   let url = `https://anti-pattern.com${currentPost.path}`
 
   let head = <React.Fragment>

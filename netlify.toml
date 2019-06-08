@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/the-culture-that-creates-the-problem-is-never-the-culture-that-fixes-the-problem"
+  to = "/always-now-never-later"
+  status = 301
+
+[[redirects]]
+  from = "/you-had-better-be-able-to-answer-these-questions-in-an-interview"
+  to = "/interview-questions"
+  status = 301

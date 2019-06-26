@@ -7,7 +7,7 @@
     "@static/charge": "^1.4.1"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.10",
+    "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.11",
     "escape-html": "^1.0.3",
     "jsdom": "^15.1.1",

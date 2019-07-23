@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 18px;
 
     @media (min-width: 400px) {
-      font-size: calc(18px + (24 - 18) * ((100vw - 400px) / (1600 - 400)));
+      font-size: calc(1.125rem + ((1vw - 4px) * 0.5));
     }
 
     @media (min-width: 1600px) {

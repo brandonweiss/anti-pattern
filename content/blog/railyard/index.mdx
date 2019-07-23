@@ -1,0 +1,77 @@
+export const frontmatter = {
+  title: "Railyard",
+  date: "2015-02-24",
+  description: "Generate new Rails applications without having to install Rails globally."
+}
+
+Rails is a slightly unusual type of gem in that it is a dependency that is installed non-globally via Bundler, but in order to generate the application skeleton that uses Rails you first have to install Rails globally.
+
+```shell
+$ gem install rails
+Fetching: thread_safe-0.3.4.gem (100%)
+Successfully installed thread_safe-0.3.4
+Fetching: minitest-5.4.2.gem (100%)
+Successfully installed minitest-5.4.2
+Fetching: tzinfo-1.2.2.gem (100%)
+Successfully installed tzinfo-1.2.2
+Fetching: i18n-0.7.0.beta1.gem (100%)
+Successfully installed i18n-0.7.0.beta1
+Fetching: activesupport-4.1.6.gem (100%)
+Successfully installed activesupport-4.1.6
+Fetching: erubis-2.7.0.gem (100%)
+Successfully installed erubis-2.7.0
+Fetching: builder-3.2.2.gem (100%)
+Successfully installed builder-3.2.2
+Fetching: actionview-4.1.6.gem (100%)
+Successfully installed actionview-4.1.6
+Fetching: rack-1.5.2.gem (100%)
+Successfully installed rack-1.5.2
+Fetching: rack-test-0.6.2.gem (100%)
+Successfully installed rack-test-0.6.2
+Fetching: actionpack-4.1.6.gem (100%)
+Successfully installed actionpack-4.1.6
+Fetching: activemodel-4.1.6.gem (100%)
+Successfully installed activemodel-4.1.6
+Fetching: arel-5.0.1.20140414130214.gem (100%)
+Successfully installed arel-5.0.1.20140414130214
+Fetching: activerecord-4.1.6.gem (100%)
+Successfully installed activerecord-4.1.6
+Fetching: mime-types-2.4.3.gem (100%)
+Successfully installed mime-types-2.4.3
+Fetching: mail-2.6.1.gem (100%)
+Successfully installed mail-2.6.1
+Fetching: actionmailer-4.1.6.gem (100%)
+Successfully installed actionmailer-4.1.6
+Fetching: thor-0.19.1.gem (100%)
+Successfully installed thor-0.19.1
+Fetching: railties-4.1.6.gem (100%)
+Successfully installed railties-4.1.6
+Fetching: sprockets-3.0.0.beta.2.gem (100%)
+Successfully installed sprockets-3.0.0.beta.2
+Fetching: sprockets-rails-2.2.0.gem (100%)
+Successfully installed sprockets-rails-2.2.0
+Fetching: rails-4.1.6.gem (100%)
+Successfully installed rails-4.1.6
+22 gems installed
+```
+
+Unfortunately, Rails has a _ton_ of dependencies and so installing it globally makes an absolute mess of your gem list. It completely obscures any relevant information you might be trying to find in there. And good luck uninstalling it; you’re going to have to manually uninstall each dependency.
+
+I realize this is an unusual nit, but it bothers me to no end. You don’t need Rails globally _except_ to generate new app skeletons. So I whipped up a simple gem called [Railyard][railyard]. It sandboxes Rails, installing it locally _inside_ the gem, on demand. You can use it to switch to any Rails version you like and generate a Rails skeleton for it, without having to install Rails globally.
+
+```shell
+$ gem install railyard
+Fetching: thor-0.19.1.gem (100%)
+Successfully installed thor-0.19.1
+Fetching: railyard-0.1.0.gem (100%)
+Successfully installed railyard-0.1.0
+2 gems installed
+```
+
+```shell
+$ railyard new app_name
+```
+
+That makes me feel so much better. 😌
+
+[railyard]: https://github.com/brandonweiss/railyard

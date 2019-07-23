@@ -1,0 +1,91 @@
+export const frontmatter = {
+  title: "Explicit Privates",
+  date: "2016-05-16",
+  description: "The best syntax for declaring methods private in Ruby."
+}
+
+Years ago I [wrote][old post] about the different styles of `private` declarations in Ruby and my personal preference. It was the best I could see at the time, but it was only marginally better than the rest and totally non-standard. Now I think I’ve finally arrived at a style that is superior to all of them.
+
+To recap, the common style is this.
+
+```ruby
+class Stuff
+
+  def something_public
+    # …
+  end
+
+  private
+
+  def something_private
+    # …
+  end
+
+end
+```
+
+Despite being ubiquitous, it’s actually awful. If your file is large, the only way to know if a method you’re looking at is private or not is to keep scrolling upwards until you either see a `private` or `class` declaration. All Rubyists have done this so many times now it’s become habitual. We’ve all internalized this as normal and we don’t ever think about how absurd it is. There’s a better way, though. If you’re a savvy Rubyist, you might be aware that the `private` declaration doesn’t affect class methods.
+
+```ruby
+class Stuff
+
+  private
+
+  def self.something_private
+    # Not actually private
+  end
+
+end
+```
+
+Never having tried to directly call a class method I’d declared as private, I didn’t discover this for years. To actually make a class method private you have to use `private_class_method`.
+
+```ruby
+class Stuff
+
+  def self.something_private
+    # Now this is private
+  end
+  private_class_method :something_private
+
+end
+```
+
+Which led me to realize you can do the same thing with instance methods and `private`.
+
+```ruby
+class Stuff
+
+  def something_private
+    # This is private
+  end
+  private :something_private
+
+end
+```
+
+And even better, the private declarations can be inlined.
+
+```ruby
+class Stuff
+
+  def something_public
+    # …
+  end
+
+  private def something_private
+    # …
+  end
+
+  private_class_method def self.classy_private
+    # …
+  end
+
+end
+```
+
+This works because the return value of a method declaration is the method name as a symbol, which gets passed as an argument to `private` and `private_class_method`.
+
+Whatever your initial gut reaction is to the repetition, it will quickly be replaced by the surprising relief of knowing immediately whether the method you’re working on is public or private and not having to jump around to find out. I’ve been using this for the last several months and it’s great. Try it—you’ll come to love it too.
+
+[old post]: /adjusting-your-privates-in-public

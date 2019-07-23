@@ -1,23 +1,38 @@
 {
   "private": true,
-  "scripts": {
-    "dev": "charge serve source"
+  "dependencies": {
+    "@mdx-js/mdx": "^1.0.21",
+    "@mdx-js/react": "^1.0.21",
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.13.9",
+    "gatsby-mdx": "^0.6.3",
+    "gatsby-plugin-feed-generator": "^2.0.3",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-react-svg": "^2.1.1",
+    "gatsby-plugin-sharp": "^2.2.3",
+    "gatsby-plugin-sitemap": "^2.2.3",
+    "gatsby-plugin-styled-components": "^3.1.0",
+    "gatsby-remark-copy-linked-files": "^2.1.0",
+    "gatsby-remark-images": "^3.1.3",
+    "gatsby-remark-prismjs": "^3.3.1",
+    "gatsby-remark-responsive-iframe": "^2.2.1",
+    "gatsby-source-filesystem": "^2.1.2",
+    "modern-normalize": "^0.5.0",
+    "prismjs": "^1.16.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-feather": "^2.0.3",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "@static/charge": "^1.4.0"
+    "husky": "^3.0.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1"
   },
-  "dependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.10",
-    "escape-html": "^1.0.3",
-    "jsdom": "^15.1.1",
-    "modern-normalize": "^0.5.0",
-    "sanitize-html": "^1.20.1",
-    "sonar-js": "^1.1.0"
-  },
-  "browserslist": [
-    ">0.50%",
-    "not ie 11",
-    "not op_mini all"
-  ]
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve"
+  }
 }

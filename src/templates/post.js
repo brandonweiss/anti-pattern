@@ -52,6 +52,11 @@ const Body = styled.div`
     margin-bottom: 0;
   }
 
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+
   .footnotes {
     font-size: 1.45rem;
   }

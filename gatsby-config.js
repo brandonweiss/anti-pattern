@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-mdx",
+      resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
           "gatsby-remark-copy-linked-files",

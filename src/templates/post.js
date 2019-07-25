@@ -5,7 +5,7 @@ import { mainLinkStyle } from "../components/styles"
 import Pagination from "../components/Pagination"
 import { HeadingContainer, BodyContainer } from "../components/Container"
 import Meta from "../components/Meta"
-import MDXRenderer from "gatsby-mdx/mdx-renderer"
+import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
 import styled from "styled-components"
 
 export const Heading = styled.h1`
@@ -68,9 +68,7 @@ export const pageQuery = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      code {
-        body
-      }
+      body
       fields {
         slug
       }
@@ -86,7 +84,7 @@ const PostTemplate = ({ data, location, pageContext }) => {
   const post = data.mdx
   const { slug } = post.fields
   const { description, title } = post.frontmatter
-  const { body } = post.code
+  const { body } = post
   const { previous, next } = pageContext
 
   return (

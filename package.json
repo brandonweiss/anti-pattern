@@ -6,7 +6,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.44",
     "gatsby-plugin-feed-generator": "^2.0.3",
-    "gatsby-plugin-mdx": "^1.0.18",
+    "gatsby-plugin-mdx": "^1.0.20",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sharp": "^2.2.9",

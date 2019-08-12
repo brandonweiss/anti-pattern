@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/Layout"
+import Meta from "../components/Meta"
 import { BodyContainer } from "../components/Container"
 import { Heading } from "../templates/post"
 import { mainLinkStyle } from "../components/styles"
@@ -14,6 +15,8 @@ const Message = styled.p`
 
 const NotFound = ({ location }) => (
   <Layout location={location}>
+    <Meta title="Not Found" />
+
     <BodyContainer>
       <Heading>Not found</Heading>
 

@@ -7,7 +7,7 @@
     "gatsby": "^2.15.1",
     "gatsby-plugin-feed-generator": "^2.0.3",
     "gatsby-plugin-mdx": "^1.0.33",
-    "gatsby-plugin-react-helmet": "^3.1.5",
+    "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.18",
     "gatsby-plugin-sitemap": "^2.2.9",

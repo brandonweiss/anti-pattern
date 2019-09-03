@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "@mdx-js/mdx": "^1.4.0",
+    "@mdx-js/mdx": "^1.4.1",
     "@mdx-js/react": "^1.4.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.5",

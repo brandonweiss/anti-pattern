@@ -1,0 +1,39 @@
+export const frontmatter = {
+  date: "2019-09-13",
+  title: ".dev Domains Not Resolving",
+  description: "It took me an entire year to figure out what was wrong.",
+}
+
+For the last year I’ve been unable to view any `.dev` domains on my computer. The problem was simple, but it took me a _long_ time to figure out what it was.
+
+As soon as Google started selling domains on the `.dev` <abbr title="Top-level domain">TLD</abbr> developers started snapping them up and using them for their websites, blogs, and other projects.
+
+Strangely though, I found I couldn’t see any of them.
+
+Whenever I would click through to a website on a `.dev` domain it wouldn’t resolve and I’d get a blank white screen in my browser.
+
+At first I chalked it up to the website being down or an issue with my <abbr title="Internet service provider">ISP</abbr> and ignored it, but after being unable to follow a dozen links to `.dev` domains over the span of a month, eventually it became clear the issue was something on my end.
+
+I searched around online but couldn’t find anyone with a similar problem and gave up. Every time I’d get linked to a `.dev` domain I’d repeat this process, spending a few minutes trying different searches. Finally, nearly a year later I found an unrelated problem that tipped me off as to what mine might be.
+
+The problem was [Pow][pow]. That’s right, the swanky development server from about six years ago.
+
+You might still be using Pow, but more likely you haven’t used it in years and completely forgot about it. I certainly had.
+
+Unfortunately, I didn’t uninstall Pow properly and its resolvers were still hanging around, routing all requests for `.dev` and `.test` into a black hole.
+
+```
+❯ ls /etc/resolver/
+dev  test
+```
+
+🤦🏼‍♂️
+
+```
+❯ sudo rm /etc/resolver/dev
+❯ sudo rm /etc/resolver/test
+```
+
+Delete the resolver files and you should be good to go ✌🏼
+
+[pow]: http://pow.cx

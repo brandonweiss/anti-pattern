@@ -95,6 +95,7 @@ const PostTemplate = ({ data, location, pageContext }) => {
     >
       <Meta
         title={title}
+        canonical={true}
         description={description}
         slug={slug}
         type="article"

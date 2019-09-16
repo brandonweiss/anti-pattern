@@ -2,7 +2,15 @@ import React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, meta = [], slug, title, type }) => {
+const SEO = ({
+  canonical = false,
+  description,
+  link = [],
+  meta = [],
+  slug,
+  title,
+  type,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,10 +29,19 @@ const SEO = ({ description, meta = [], slug, title, type }) => {
 
   let metaDescription = description || site.siteMetadata.description
 
+  if (canonical) {
+    link.push({
+      rel: "canonical",
+      key: site.siteMetadata.siteUrl + slug,
+      href: site.siteMetadata.siteUrl + slug,
+    })
+  }
+
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
       defaultTitle={site.siteMetadata.title}
+      link={link}
       title={title}
       titleTemplate={`%s - ${site.siteMetadata.title}`}
       meta={[

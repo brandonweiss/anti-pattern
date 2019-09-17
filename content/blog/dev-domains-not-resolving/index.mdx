@@ -14,6 +14,8 @@ Whenever I would click through to a website on a `.dev` domain it wouldn’t res
 
 At first I chalked it up to the website being down or an issue with my <abbr title="Internet service provider">ISP</abbr> and ignored it, but after being unable to follow a dozen links to `.dev` domains over the span of a month, eventually it became clear the issue was something on my end.
 
+I did the usual incantantions I could think of. I tried [`dig`][dig], but nothing seemed to be wrong. I tried [`ping`][ping] and [`traceroute`][traceroute], which both hung, indicating something was wrong, but also returned no information I could use to narrow down the issue.
+
 I searched around online but couldn’t find anyone with a similar problem and gave up. Every time I’d get linked to a `.dev` domain I’d repeat this process, spending a few minutes trying different searches. Finally, nearly a year later I found an unrelated problem that tipped me off as to what mine might be.
 
 The problem was [Pow][pow]. That’s right, the swanky development server from about six years ago.
@@ -36,4 +38,7 @@ dev  test
 
 Delete the resolver files and you should be good to go ✌🏼
 
+[dig]: https://en.wikipedia.org/wiki/Dig_(command)
+[ping]: https://en.wikipedia.org/wiki/Ping_(networking_utility)
+[traceroute]: https://en.wikipedia.org/wiki/Traceroute
 [pow]: http://pow.cx

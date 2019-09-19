@@ -2,6 +2,9 @@ export const frontmatter = {
   title: "Strip Leading Whitespace from Heredocs in Ruby",
   date: "2014-02-11",
   description: "You don’t need to outdent all your heredocs.",
+  unsplashPhoto: "https://images.unsplash.com/photo-1414497729697-b8555ba6c1cc",
+  unsplashPhotoLink: "https://unsplash.com/photos/o14nNEbLa-s",
+  unsplashPhotoAuthor: "Mike Kenneally",
 }
 
 **Update**: Starting in Ruby 2.3 this can be done natively with the “squiggly” heredoc. Using a tilde instead of a hyphen will strip the leading whitespace.
@@ -38,7 +41,7 @@ There are all sorts of uses for heredocs, but I find them especially useful in t
 
 Case in point, I just switched to [Redcarpet][redcarpet] to process the Markdown this blog is written in. But before I did I wrote several tests, one of which ensures that Redcarpet renders [fenced code blocks][fenced-code-blocks].
 
-```ruby
+````ruby
 describe "render_html_from_markdown" do
 
   it "renders fenced code blocks" do
@@ -49,11 +52,11 @@ describe "render_html_from_markdown" do
   end
 
 end
-```
+````
 
 This works, but heredocs can dramatically improve the readability of this test.
 
-```ruby
+````ruby
 describe "render_html_from_markdown" do
 
   it "renders fenced code blocks" do
@@ -74,7 +77,7 @@ describe "render_html_from_markdown" do
   end
 
 end
-```
+````
 
 The HTML output isn’t quite formatted how I would have done it by hand, but the important thing is that the test is _significantly_ more readable.
 
@@ -82,7 +85,7 @@ There is, however, one problem—the test actually fails now. It fails because I
 
 If you’re using Rails (or ActiveSupport) there’s a [`strip_heredoc`][strip-heredoc] helper method that solves this problem. It looks for the least indented line in the string and removes that amount of leading whitespace from each line[^2].
 
-```ruby
+````ruby
 describe "render_html_from_markdown" do
 
   it "renders fenced code blocks" do
@@ -103,10 +106,9 @@ describe "render_html_from_markdown" do
   end
 
 end
-```
+````
 
 [^1]: The actual acronym or word you use to delimit the heredoc doesn’t really matter. The two most common are EOS (end of string) and EOF (end of file), but using semantic names like “SQL” is even better.
-
 [^2]: The syntax is admittedly a little awkward but methods called on heredocs are called on the _starting_ delimiter.
 
 [heredoc]: http://en.wikipedia.org/wiki/Here_document

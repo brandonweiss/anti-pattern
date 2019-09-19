@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const SEO = ({
   canonical = false,
   description,
+  image,
   link = [],
   meta = [],
   slug,
@@ -34,6 +35,13 @@ const SEO = ({
       rel: "canonical",
       key: site.siteMetadata.siteUrl + slug,
       href: site.siteMetadata.siteUrl + slug,
+    })
+  }
+
+  if (image) {
+    meta.push({
+      property: "og:image",
+      content: site.siteMetadata.siteUrl + image,
     })
   }
 
@@ -73,7 +81,7 @@ const SEO = ({
         },
         {
           name: "twitter:card",
-          content: "summary",
+          content: "summary_large_image",
         },
         {
           name: "twitter:creator",

@@ -1,5 +1,8 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const {
+  createFilePath,
+  createRemoteFileNode,
+} = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -37,11 +40,18 @@ exports.createPages = ({ graphql, actions }) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
 
+      const {
+        node: {
+          fields: { slug },
+          frontmatter: { unsplashImageID },
+        },
+      } = post
+
       createPage({
-        path: post.node.fields.slug,
+        path: slug,
         component: blogPost,
         context: {
-          slug: post.node.fields.slug,
+          slug: slug,
           previous,
           next,
         },
@@ -52,15 +62,41 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = async ({
+  actions,
+  cache,
+  createContentDigest,
+  getNode,
+  node,
+  reporter,
+  store,
+}) => {
+  const { createNode, createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark` || node.internal.type === "Mdx") {
+  if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode, trailingSlash: false })
+
     createNodeField({
-      name: `slug`,
-      node,
-      value,
+      node: node,
+      name: "slug",
+      value: value,
     })
+
+    if (node.frontmatter.unsplashPhoto) {
+      const fileNode = await createRemoteFileNode({
+        url: `${node.frontmatter.unsplashPhoto}?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjkyMTM4fQ`,
+        store,
+        cache,
+        createNode,
+        createNodeId: createContentDigest,
+        reporter,
+      })
+
+      createNodeField({
+        node: node,
+        name: "localUnsplashPhoto___NODE",
+        value: fileNode.id,
+      })
+    }
   }
 }

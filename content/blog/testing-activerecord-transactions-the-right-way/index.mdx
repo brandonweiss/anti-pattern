@@ -1,7 +1,11 @@
 export const frontmatter = {
   title: "Testing ActiveRecord Transactions the Right Way",
   date: "2014-05-20",
-  description: "The correct method semantics will make the intent of the test clearer."
+  description:
+    "The correct method semantics will make the intent of the test clearer.",
+  unsplashPhoto: "https://images.unsplash.com/photo-1543617080-0db79d35e926",
+  unsplashPhotoLink: "https://unsplash.com/photos/-5paXZX8lWk",
+  unsplashPhotoAuthor: "Kai Dahms",
 }
 
 Database transactions are a way of making multiple queries to a database such that all of them must succeed or none of them will. This helps prevent data from getting into an unexpected state. Take for example a user signing up.

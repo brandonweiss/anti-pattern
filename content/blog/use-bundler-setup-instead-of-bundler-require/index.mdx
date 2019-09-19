@@ -1,7 +1,10 @@
 export const frontmatter = {
   date: "2013-03-12",
   title: "Use Bundler.setup Instead of Bundler.require",
-  description: "It took me a while to come around on this one."
+  description: "It took me a while to come around on this one.",
+  unsplashPhoto: "https://images.unsplash.com/photo-1517373116369-9bdb8cdc9f62",
+  unsplashPhotoLink: "https://unsplash.com/photos/l090uFWoPaI",
+  unsplashPhotoAuthor: "John Barkiple",
 }
 
 For a long time I thought automatically requiring dependencies was significantly better than manually requiring them. It’s hard to remember now exactly how I arrived at this opinion, but it was certainly influenced by using Rails in the early days before [Bundler][bundler] existed.
@@ -26,6 +29,6 @@ If you automatically load all your dependencies when you load your environment, 
 
 ---
 
-Ruby is designed to have un-scoped dependencies—once you require a dependencies it’s available everywhere. There are some distinct advantages to this design, but one extreme downside is it allows you to stop thinking about your application as a structured collection of small, loosely-coupled objects, the negative effects of which compound as your application becomes larger. Manually requiring dependencies is a great way to subtly enforce better design.
+Ruby is designed to have un-scoped dependencies—once you require a dependency it’s available everywhere. There are some distinct advantages to this design, but one extreme downside is it allows you to stop thinking about your application as a structured collection of small, loosely-coupled objects, the negative effects of which compound as your application becomes larger. Manually requiring dependencies is a great way to subtly enforce better design.
 
 [bundler]: http://gembundler.org

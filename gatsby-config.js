@@ -4,7 +4,7 @@ module.exports = {
     description:
       "The most popular unpopular opinions on programming by Brandon Weiss.",
     title: "Anti-pattern",
-    twitterAccount: "@brandonweiss",
+    twitterAccount: "@brandon_weiss",
     siteUrl: "https://anti-pattern.com",
   },
   plugins: [
@@ -98,5 +98,6 @@ module.exports = {
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-styled-components",
+    "gatsby-transformer-sharp",
   ],
 }

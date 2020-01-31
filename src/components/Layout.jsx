@@ -4,7 +4,6 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Spacer from "./Spacer"
 import Subscribe from "./Subscribe"
-import Tracking from "./Tracking"
 import Helmet from "react-helmet"
 import "modern-normalize"
 import { BodyContainer } from "./Container"
@@ -104,8 +103,6 @@ const Layout = ({ children, location, pagination }) => {
           )}
         </BodyContainer>
       </Wrapper>
-
-      <Tracking />
     </>
   )
 }

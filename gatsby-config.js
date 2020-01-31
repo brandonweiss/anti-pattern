@@ -9,6 +9,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        siteId: "OXBMNBUY",
+      },
+    },
+    {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [

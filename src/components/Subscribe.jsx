@@ -44,11 +44,15 @@ const Email = styled(Input)`
 `
 
 const Submit = styled(Input)`
+  background-color: hsl(211, 100%, 65%);
   border: 0;
-  background-color: rgba(0, 105, 255, 0.6);
   color: white;
   cursor: pointer;
   flex: 0 0 auto;
+
+  &:hover {
+    background-color: hsl(211, 100%, 60%);
+  }
 `
 
 const Subscribe = () => {

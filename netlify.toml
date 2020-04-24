@@ -7,3 +7,6 @@
   from = "/you-had-better-be-able-to-answer-these-questions-in-an-interview"
   to = "/interview-questions"
   status = 301
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"

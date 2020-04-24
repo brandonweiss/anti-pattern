@@ -4,7 +4,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Spacer from "./Spacer"
 import Subscribe from "./Subscribe"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import "modern-normalize"
 import { BodyContainer } from "./Container"
 

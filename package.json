@@ -19,7 +19,7 @@
     "gatsby-remark-prismjs": "^3.4.1",
     "gatsby-remark-responsive-iframe": "^2.3.1",
     "gatsby-source-filesystem": "^2.2.5",
-    "gatsby-transformer-sharp": "^2.4.4",
+    "gatsby-transformer-sharp": "^2.5.3",
     "modern-normalize": "^0.6.0",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",

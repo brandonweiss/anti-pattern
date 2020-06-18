@@ -24,7 +24,7 @@
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-feather": "^2.0.4",
+    "react-feather": "^2.0.8",
     "react-helmet": "^6.0.0",
     "styled-components": "^5.1.0"
   },

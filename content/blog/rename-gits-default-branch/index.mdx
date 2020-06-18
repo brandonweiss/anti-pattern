@@ -1,0 +1,84 @@
+export const frontmatter = {
+  title: "Rename Git’s Default Branch",
+  date: "2020-06-18",
+  description:
+    "And update your tools to detect what the default branch is in each repository.",
+  unsplashPhoto: "https://images.unsplash.com/photo-1521675333836-36e707ac1d20",
+  unsplashPhotoLink: "https://unsplash.com/photos/H7LxvEmVZnE",
+  unsplashPhotoAuthor: "Zach Reiner",
+}
+
+Since its inception the default branch in every new Git repository has been named “master”.
+
+I’d stopped using terms like master, slave, blacklist, whitelist, et cetera in my code years ago because they’re racist (not to mention unclear) but I’m embarrassed to say that it never even occurred to me that Git’s default branch name was another instance of the same problem.[^1]
+
+There has been some discussion on the Git mailing list about moving away from “master” but I wouldn’t hold my breath. GitHub has announced they’re going to choose a new default branch name soon and when they do it’s likely that whatever they pick will become the de facto standard.
+
+To change your default branch name now (or after GitHub announces the change) here’s what you do.
+
+## Make a new default branch
+
+Start by duplicating master. I’m using “main” for this example but use whatever you like.
+
+```bash
+git switch --create main master
+```
+
+Then push it up and set the upstream.
+
+```bash
+git push -u origin main
+```
+
+Next [change your default branch in GitHub](https://help.github.com/en/github/administering-a-repository/setting-the-default-branch) to “main”.
+
+And finally [change the base branch of any open pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-base-branch-of-a-pull-request) to “main”.
+
+I initially thought it would be more complicated but this is basically it. All that’s left is to do a search for “master” in your repository and change any hardcoded references. External tools and services you use (like CI) might also need some tweaking.
+
+There is one big gotcha, though. Some people are not going to rename their master branch, some people are going to go with whatever GitHub chooses, and some people are going to choose something else entirely.
+
+If there is no universal default branch name, how do you make aliases and scripts that rely on one? You can’t hardcode “master” anymore, so what do you do?
+
+## Get the default branch name dynamically
+
+Git doesn’t really have a concept of a local “default” branch, but it does have conveniences around dealing with remotes. For example, you can shorten `git log origin/master` to just `git log origin` and Git knows you mean to log the “master” branch.
+
+The way Git does this is by keeping track (locally) of what branch `origin/HEAD` points to. That’s actually what’s happening when you change your default branch in GitHub—it updates `origin/HEAD` to point from `origin/master` to whatever your new default branch is.
+
+All you need to do is tell your local repository to update its reference of what `origin/HEAD` points to.[^2]
+
+```bash
+git remote set-head origin --auto
+```
+
+Now you can use the `git symbolic-ref` command to get the default branch ref and filter out the branch name. You’ll want to make a Bash script so you can use reuse it.
+
+Make a file named `default_branch`, put it somewhere in your path, and make it executable.
+
+```bash
+#!/usr/bin/env bash
+
+git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+```
+
+Now use this script anywhere you were previously hardcoding the name “master”.
+
+For example, I have a Git alias for switching to my default branch.
+
+```
+[alias]
+  swm = switch master
+```
+
+I need to tweak the alias syntax slightly so it can execute the script and dynamically get the default branch for the repository.
+
+```
+[alias]
+  swd = "!git switch $(default_branch)"
+```
+
+Keep in mind that regardless of what shell you’re using, Git aliases are executed using Bash so you need to use Bash’s command substitution syntax.
+
+[^1]: You might be thinking the “master” branch is not an issue because it’s a reference to the “master copy” of something [but no, it’s not](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html).
+[^2]: Some repositories might not already have a reference for `origin/head`, but you can create one the same way.

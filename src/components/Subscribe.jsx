@@ -56,7 +56,7 @@ const Submit = styled(Input)`
 `
 
 const Subscribe = () => {
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     window.open("https://buttondown.email/brandonweiss", "popupwindow")
   }
 
@@ -81,6 +81,7 @@ const Subscribe = () => {
           placeholder="Your email address"
           required
         />
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
         <input type="hidden" value="1" name="embed" />
 
         <Submit type="submit" value="Subscribe" />
